@@ -5,196 +5,105 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import dynamic from "next/dynamic";
 import { PROJECTS } from "@/data/projects";
 import SmoothScrollProvider from "@/components/motion/SmoothScrollProvider";
-
-const ArchitectureScene = dynamic(() => import("@/components/3d/ArchitectureScene"), {
-  ssr: false,
-  loading: () => <div className="absolute inset-0 bg-[#0B0B0B]" />,
-});
-
-const SpatialModel = dynamic(() => import("@/components/3d/SpatialModel"), {
-  ssr: false,
-  loading: () => <div className="h-[400px] w-full bg-[#0B0B0B] rounded-lg" />,
-});
-
-const FloatingProjectGallery = dynamic(() => import("@/components/3d/FloatingProjectGallery"), {
-  ssr: false,
-  loading: () => <div className="py-12 bg-[#0B0B0B]" />,
-});
-
+import CinematicHero from "@/components/home/CinematicHero";
+import SpaceWalkthrough from "@/components/home/SpaceWalkthrough";
 
 export default function HomePage() {
   const featuredProject = PROJECTS.find((p) => p.id === "the-courtyard-house") || PROJECTS[0];
+  const selectedProjects = PROJECTS.slice(0, 6);
 
-  const [hoveredService, setHoveredService] = useState<number | null>(0);
+  const [activeProcess, setActiveProcess] = useState(0);
+
+  const processSteps = [
+    { num: "01", title: "Listen", desc: "Understanding how you live, move, and rest within spaces." },
+    { num: "02", title: "Read the Site", desc: "Analyzing climate, sun angles, wind paths, and local stone traditions." },
+    { num: "03", title: "Shape the Plan", desc: "Carving spatial proportions, courtyard lightwells, and quiet thresholds." },
+    { num: "04", title: "Detail Materials", desc: "Curating hand-plastered walls, teak joinery, and patinated brass." },
+    { num: "05", title: "Deliver the Space", desc: "Overseeing craft execution down to every shadow gap and fixture." },
+  ];
 
   const servicesList = [
     {
-      number: "01",
-      title: "Residences",
+      num: "01",
+      title: "Residential Architecture",
       desc: "Private family havelis, coastal retreats and sky penthouses carved from local stone, quiet light wells, and natural timber.",
       image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=85&w=1200",
     },
     {
-      number: "02",
-      title: "Hospitality",
+      num: "02",
+      title: "Interior Design",
+      desc: "Bespoke spatial layouts, custom joinery, tactile textiles, and curated lighting tailored to daily rituals.",
+      image: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&q=85&w=1200",
+    },
+    {
+      num: "03",
+      title: "Hospitality Spaces",
       desc: "Boutique eco-lodges, wellness sanctuaries and destination dining venues designed for sensory pause and deep stillness.",
       image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=85&w=1200",
     },
     {
-      number: "03",
-      title: "Cultural Spaces",
-      desc: "Private art galleries, foundations, and adaptive reuse monograph spaces celebrating regional heritage and human artistry.",
-      image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=85&w=1200",
+      num: "04",
+      title: "Renovation & Styling",
+      desc: "Restoration of historic structures and architectural transformations that honor heritage while upgrading contemporary comfort.",
+      image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=85&w=1200",
     },
-    {
-      number: "04",
-      title: "Interior Architecture",
-      desc: "Custom architectural millwork, Araish lime plaster surfaces, acoustic restraint, and unpolished brass hardware curation.",
-      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=85&w=1200",
-    },
-  ];
-
-  const processBlueprint = [
-    { num: "01", title: "Listen", desc: "Absorbing client rituals, family memory, and spatial desires." },
-    { num: "02", title: "Read the site", desc: "Topographic elevation, solar heat gain, wind currents, and regional stone." },
-    { num: "03", title: "Shape the volume", desc: "Carving courtyards, lightwells, overhangs, and volumetric proportions." },
-    { num: "04", title: "Detail the atmosphere", desc: "Tactile lime plasters, acoustic timber claddings, and unlacquered metals." },
-    { num: "05", title: "Build with restraint", desc: "On-site artisan coordination and editorial art direction handover." },
   ];
 
   return (
     <SmoothScrollProvider>
-      <div className="space-y-0 overflow-hidden bg-bone-100 text-charcoal-900 selection:bg-charcoal-900 selection:text-bone-100">
+      <main className="bg-ivory-100 text-charcoal-900 selection:bg-charcoal-900 selection:text-ivory-100 overflow-x-hidden">
         
-        {/* 1. FULL-SCREEN 3D HERO EXPERIENCE */}
-        <section className="relative min-h-[90vh] sm:min-h-screen w-full flex flex-col justify-between pt-28 pb-10 sm:pt-32 sm:pb-14 px-6 sm:px-10 lg:px-16 overflow-hidden">
-          {/* Real Three.js 3D Architectural Scene Canvas */}
-          <ArchitectureScene />
+        {/* A. CINEMATIC HERO */}
+        <CinematicHero />
 
-          {/* Editorial Side Watermark Label */}
-          <div className="hidden lg:block absolute left-8 top-1/2 -translate-y-1/2 z-10 font-sans text-[10px] uppercase tracking-[0.4em] text-ash-400 writing-mode-vertical pointer-events-none opacity-60">
-            AAROH STUDIO • 3D SPATIAL MONOGRAPH
-          </div>
+        {/* B. WALK THROUGH THE SPACE */}
+        <SpaceWalkthrough />
 
-          {/* Top Editorial Details Bar */}
-          <div className="relative z-10 flex items-center justify-between text-[10px] sm:text-xs uppercase tracking-[0.3em] text-ash-400 border-b border-white/10 pb-4">
-            <div className="flex items-center space-x-4">
-              <span className="text-brass-300 font-medium">AAROH STUDIO</span>
-              <span className="hidden sm:inline">•</span>
-              <span className="hidden sm:inline">JAIPUR • UDAIPUR • GLOBAL</span>
-            </div>
-            <span>EST. 2012</span>
-          </div>
-
-          {/* Hero Content Overlay */}
-          <div className="relative z-10 max-w-5xl space-y-6 my-auto pt-6">
-            <div className="text-[10px] uppercase tracking-[0.35em] text-brass-300 font-medium">
-              Architecture & Interior Design
+        {/* C. FEATURED PROJECT SPREAD */}
+        <section className="py-24 sm:py-32 px-6 sm:px-10 lg:px-16 border-b border-charcoal-900/10">
+          <div className="max-w-7xl mx-auto space-y-12">
+            <div className="flex items-center justify-between border-b border-charcoal-900/10 pb-4 text-[10px] uppercase tracking-[0.3em] text-brass-600 font-medium">
+              <span>FEATURED MONOGRAPH</span>
+              <span>{featuredProject.location} • {featuredProject.year}</span>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-7xl md:text-8xl lg:text-[86px] font-light tracking-tight leading-[1.02] text-bone-100">
-              Architecture that moves through light, memory and material.
-            </h1>
-
-            <p className="text-xs sm:text-sm md:text-base text-ash-300 font-light max-w-2xl leading-relaxed tracking-wide">
-              Spatial stories for residences, retreats and cultural interiors. AAROH Studio creates climate-responsive architecture and tactile sanctuaries.
-            </p>
-
-            {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-6 pt-4">
-              <Link
-                href="#signature-project"
-                className="px-8 py-3.5 bg-bone-100 text-charcoal-900 text-xs uppercase tracking-[0.25em] font-medium hover:bg-brass-300 transition-colors shadow-xl"
-              >
-                Explore Work
-              </Link>
-
-              <Link
-                href="/contact"
-                className="px-8 py-3.5 border border-white/30 text-bone-100 hover:border-brass-300 hover:text-brass-300 text-xs uppercase tracking-[0.25em] font-medium transition-colors"
-              >
-                Start a Project
-              </Link>
-            </div>
-          </div>
-
-          {/* Bottom Hero Scroll Indicator */}
-          <div className="relative z-10 flex items-center justify-between border-t border-white/10 pt-4 text-[10px] uppercase tracking-[0.3em] text-ash-400">
-            <span>01 / 07 • 3D SPATIAL MONOGRAPH</span>
-            <div className="flex items-center space-x-3">
-              <span className="w-12 h-[1px] bg-brass-300/60" />
-              <span>SCROLL TO GLIDE 3D CAMERA</span>
-            </div>
-          </div>
-        </section>
-
-
-        {/* 2. FEATURED PROJECT (MAGAZINE SPREAD) */}
-        <section id="signature-project" className="py-20 md:py-28 bg-bone-100 px-6 sm:px-10 lg:px-16 border-b border-charcoal-900/10">
-          <div className="max-w-7xl mx-auto space-y-10">
-            <div className="flex items-center justify-between border-b border-charcoal-900/10 pb-4">
-              <span className="text-[10px] uppercase tracking-[0.35em] text-brass-600 font-medium">
-                Featured Case Study
-              </span>
-              <span className="text-[10px] uppercase tracking-[0.3em] text-muted-slate">
-                {featuredProject.location} • {featuredProject.year}
-              </span>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-              <div className="lg:col-span-7 relative">
-                <div className="relative h-[440px] sm:h-[580px] w-full overflow-hidden bg-charcoal-900 border border-charcoal-900/10 shadow-2xl">
-                  <Image
-                    src={featuredProject.heroImage}
-                    alt={featuredProject.title}
-                    fill
-                    className="object-cover filter contrast-[1.04]"
-                  />
-                </div>
-                <div className="hidden sm:block absolute bottom-[-20px] right-[-20px] w-56 h-64 border-4 border-bone-100 shadow-2xl overflow-hidden z-20">
-                  <Image
-                    src={featuredProject.gallery[0]?.url || featuredProject.heroImage}
-                    alt={featuredProject.title}
-                    fill
-                    className="object-cover filter brightness-90"
-                  />
-                </div>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              {/* Image Frame */}
+              <div className="lg:col-span-7 relative h-[360px] sm:h-[540px] w-full overflow-hidden bg-charcoal-900 shadow-2xl group border border-charcoal-900/10">
+                <Image
+                  src={featuredProject.heroImage}
+                  alt={featuredProject.title}
+                  fill
+                  className="object-cover filter contrast-[1.04] group-hover:scale-[1.03] transition-transform duration-700"
+                  priority
+                />
               </div>
 
+              {/* Narrative Content */}
               <div className="lg:col-span-5 space-y-6">
-                <div className="space-y-2">
-                  <span className="font-serif text-5xl sm:text-6xl text-brass-500 font-light block">
-                    01
-                  </span>
-                  <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-charcoal-900 font-light tracking-tight">
-                    {featuredProject.title}
-                  </h2>
-                  <p className="text-xs uppercase tracking-[0.25em] text-brass-600 font-medium">
-                    {featuredProject.typology} • {featuredProject.area}
-                  </p>
-                </div>
-
-                <p className="text-sm sm:text-base text-muted-slate font-light leading-relaxed">
-                  {featuredProject.poeticDescription}
+                <span className="font-serif text-5xl text-brass-500 font-light block">01</span>
+                <h2 className="font-serif text-3xl sm:text-5xl text-charcoal-900 font-light">
+                  {featuredProject.title}
+                </h2>
+                <p className="text-xs uppercase tracking-[0.25em] text-brass-600 font-medium">
+                  {featuredProject.typology} • {featuredProject.area}
+                </p>
+                <p className="text-sm text-stone-700 font-light leading-relaxed">
+                  {featuredProject.thesis}
                 </p>
 
-                <div className="space-y-3 border-t border-charcoal-900/10 pt-5">
-                  <span className="text-[10px] uppercase tracking-[0.3em] text-charcoal-900 font-medium block">
-                    Primary Material Palette:
-                  </span>
-                  <div className="flex flex-wrap gap-2 text-xs text-muted-slate">
-                    {featuredProject.materialPalette.map((m) => (
-                      <span key={m.name} className="px-3 py-1 bg-ash-100 border border-ash-300 text-[11px]">
-                        {m.name}
-                      </span>
-                    ))}
-                  </div>
+                {/* Material Chips */}
+                <div className="pt-2 flex flex-wrap gap-2">
+                  {featuredProject.materialPalette.slice(0, 3).map((m) => (
+                    <span key={m.name} className="text-[10px] uppercase tracking-[0.2em] px-3 py-1.5 bg-stone-300 text-charcoal-900 font-medium border border-charcoal-900/10">
+                      {m.name}
+                    </span>
+                  ))}
                 </div>
 
-                <div className="pt-2">
+                <div className="pt-4">
                   <Link
                     href={`/projects/${featuredProject.id}`}
                     className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.25em] text-charcoal-900 hover:text-brass-600 font-medium border-b border-charcoal-900 pb-1 transition-colors group"
@@ -208,166 +117,175 @@ export default function HomePage() {
           </div>
         </section>
 
-
-        {/* 3. DYNAMIC SPATIAL METHOD 3D SECTION */}
-        <SpatialModel />
-
-
-        {/* 4. INTERACTIVE 3D FLOATING PROJECT GALLERY */}
-        <FloatingProjectGallery />
-
-
-        {/* 5. STUDIO ETHOS & DISCIPLINE */}
-        <section className="py-20 md:py-28 bg-bone-100 px-6 sm:px-10 lg:px-16 border-b border-charcoal-900/10">
-          <div className="max-w-6xl mx-auto space-y-12">
-            <span className="text-[10px] uppercase tracking-[0.35em] text-brass-600 font-medium block">
-              Ethos & Discipline
-            </span>
-
-            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-light text-charcoal-900 leading-[1.1] tracking-tight text-balance">
-              “Luxury is not excess. It is the discipline of knowing what to leave untouched.”
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-charcoal-900/10">
-              {[
-                { num: "01", title: "Light before form", desc: "Before drawing a wall, we calculate how morning sun washes over stone surfaces." },
-                { num: "02", title: "Materials with memory", desc: "We specify honest natural materials that accept human patina and weather gracefully." },
-                { num: "03", title: "Silence as a design tool", desc: "Acoustic compression and spatial restraint create profound stillness inside modern homes." },
-              ].map((p) => (
-                <div key={p.title} className="space-y-3">
-                  <span className="font-serif text-2xl text-brass-600 font-light block">{p.num}</span>
-                  <h3 className="font-serif text-2xl text-charcoal-900 font-light">{p.title}</h3>
-                  <p className="text-xs text-muted-slate font-light leading-relaxed">{p.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-
-        {/* 6. SERVICES DISCIPLINE */}
-        <section className="py-20 md:py-28 bg-bone-200 px-6 sm:px-10 lg:px-16 border-b border-charcoal-900/10">
+        {/* D. SELECTED SPATIAL WORKS (STABLE 3-COLUMN DESKTOP GRID) */}
+        <section className="py-24 sm:py-32 px-6 sm:px-10 lg:px-16 border-b border-charcoal-900/10 bg-ivory-50">
           <div className="max-w-7xl mx-auto space-y-12">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-charcoal-900/10 pb-6">
-              <div>
-                <span className="text-[10px] uppercase tracking-[0.35em] text-brass-600 font-medium block mb-1">
-                  Manifesto of Practice
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-charcoal-900/10 pb-6">
+              <div className="space-y-3">
+                <span className="text-[10px] uppercase tracking-[0.35em] text-brass-600 font-medium block">
+                  Curated Monograph Index
                 </span>
-                <h2 className="font-serif text-3xl sm:text-4xl text-charcoal-900 font-light">
-                  Services & Disciplines
+                <h2 className="font-serif text-3xl sm:text-5xl text-charcoal-900 font-light">
+                  Selected Spatial Works
                 </h2>
               </div>
               <Link
-                href="/services"
-                className="text-xs uppercase tracking-[0.25em] text-brass-600 hover:text-charcoal-900 font-medium transition-colors"
+                href="/projects"
+                className="text-xs uppercase tracking-[0.25em] text-brass-600 hover:text-charcoal-900 font-medium border-b border-brass-600 pb-1 self-start sm:self-auto"
               >
-                Explore Scope Deliverables ↗
+                View Complete Archive ↗
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-              <div className="lg:col-span-7 divide-y divide-charcoal-900/10 border-t border-b border-charcoal-900/10">
-                {servicesList.map((service, idx) => (
-                  <div
-                    key={service.title}
-                    onMouseEnter={() => setHoveredService(idx)}
-                    className={`py-6 px-4 cursor-pointer transition-all duration-300 ${
-                      hoveredService === idx ? "bg-bone-100 border-l-2 border-charcoal-900" : ""
-                    }`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="font-serif text-2xl text-brass-600">{service.number}</span>
-                      <h3 className="font-serif text-2xl sm:text-3xl text-charcoal-900">{service.title}</h3>
+            {/* 3-Column Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {selectedProjects.map((project) => (
+                <div key={project.id} className="group space-y-4">
+                  <Link href={`/projects/${project.id}`} className="block relative aspect-[4/3] w-full overflow-hidden bg-charcoal-900 border border-charcoal-900/10 shadow-md">
+                    <Image
+                      src={project.heroImage}
+                      alt={project.title}
+                      fill
+                      className="object-cover filter contrast-[1.03] group-hover:scale-[1.03] transition-transform duration-500"
+                    />
+                  </Link>
+                  <div className="space-y-1.5">
+                    <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.2em] text-brass-600 font-medium">
+                      <span>{project.typology}</span>
+                      <span>{project.year}</span>
                     </div>
-                    <p className="text-xs text-muted-slate font-light pt-2 max-w-xl leading-relaxed">
-                      {service.desc}
+                    <h3 className="font-serif text-2xl text-charcoal-900 group-hover:text-brass-600 transition-colors">
+                      <Link href={`/projects/${project.id}`}>{project.title}</Link>
+                    </h3>
+                    <p className="text-xs text-stone-600 font-light line-clamp-2">
+                      {project.location} — {project.tagline}
                     </p>
                   </div>
-                ))}
-              </div>
-
-              <div className="lg:col-span-5 relative">
-                <div className="relative h-[420px] w-full overflow-hidden bg-charcoal-900 border border-charcoal-900/10 shadow-2xl">
-                  <Image
-                    src={
-                      hoveredService !== null
-                        ? servicesList[hoveredService].image
-                        : servicesList[0].image
-                    }
-                    alt="AAROH Service Accent"
-                    fill
-                    className="object-cover transition-all duration-700 filter contrast-[1.04]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/80 via-transparent to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6 text-xs uppercase tracking-[0.25em] text-bone-100">
-                    {hoveredService !== null ? servicesList[hoveredService].title : "Residences"}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-
-        {/* 7. STUDIO PROCESS (BLUEPRINT TIMELINE) */}
-        <section className="py-20 md:py-28 bg-[#0B0B0B] text-bone-100 px-6 sm:px-10 lg:px-16 border-b border-white/10">
-          <div className="max-w-7xl mx-auto space-y-14">
-            <div className="space-y-3">
-              <span className="text-[10px] uppercase tracking-[0.35em] text-brass-400 font-medium block">
-                Architectural Methodology
-              </span>
-              <h2 className="font-serif text-3xl sm:text-5xl text-bone-100 font-light">
-                The Blueprint Process
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
-              {processBlueprint.map((step) => (
-                <div
-                  key={step.num}
-                  className="space-y-4 border-l md:border-l-0 md:border-t border-white/15 pt-6 md:pt-8 pl-6 md:pl-0 relative"
-                >
-                  <span className="font-serif text-3xl text-brass-400 font-light block">
-                    {step.num}
-                  </span>
-                  <h3 className="font-serif text-2xl text-bone-100">{step.title}</h3>
-                  <p className="text-xs text-ash-400 font-light leading-relaxed">
-                    {step.desc}
-                  </p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
+        {/* E. STUDIO ETHOS */}
+        <section className="py-24 sm:py-32 bg-[#0E0E0D] text-ivory-100 px-6 sm:px-10 lg:px-16 border-b border-white/10">
+          <div className="max-w-5xl mx-auto space-y-16 text-center">
+            <div className="space-y-6">
+              <span className="text-[10px] uppercase tracking-[0.35em] text-brass-400 font-medium block">
+                Studio Ethos & Principles
+              </span>
+              <blockquote className="font-serif text-3xl sm:text-5xl lg:text-6xl text-ivory-100 font-light leading-tight">
+                "Luxury is not excess. It is the discipline of light, proportion and restraint."
+              </blockquote>
+            </div>
 
-        {/* 8. FINAL COMMISSION SECTION */}
-        <section className="py-20 md:py-28 bg-bone-100 text-charcoal-900 text-center px-6 sm:px-10 lg:px-16 border-t border-charcoal-900/10">
-          <div className="max-w-4xl mx-auto space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-left border-t border-white/10 pt-12">
+              <div className="space-y-3">
+                <span className="font-serif text-2xl text-brass-400 block">01</span>
+                <h3 className="font-serif text-xl text-ivory-100 font-light">Light before decoration</h3>
+                <p className="text-xs text-stone-400 font-light leading-relaxed">
+                  We shape openings to catch morning sun and soft evening shadows before specifying surface finishes.
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <span className="font-serif text-2xl text-brass-400 block">02</span>
+                <h3 className="font-serif text-xl text-ivory-100 font-light">Materials that age beautifully</h3>
+                <p className="text-xs text-stone-400 font-light leading-relaxed">
+                  Local sandstone, hand-rubbed brass, and lime plaster patinate gracefully with time and touch.
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <span className="font-serif text-2xl text-brass-400 block">03</span>
+                <h3 className="font-serif text-xl text-ivory-100 font-light">Silence as a design tool</h3>
+                <p className="text-xs text-stone-400 font-light leading-relaxed">
+                  Spatial transitions are tuned for sensory calm, acoustic softness, and unhurried daily living.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* F. SERVICES */}
+        <section className="py-24 sm:py-32 px-6 sm:px-10 lg:px-16 border-b border-charcoal-900/10">
+          <div className="max-w-7xl mx-auto space-y-12">
+            <div className="space-y-3 border-b border-charcoal-900/10 pb-6">
+              <span className="text-[10px] uppercase tracking-[0.35em] text-brass-600 font-medium block">
+                Architectural Offerings
+              </span>
+              <h2 className="font-serif text-3xl sm:text-5xl text-charcoal-900 font-light">
+                Services & Disciplines
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {servicesList.map((service) => (
+                <div key={service.num} className="p-8 bg-ivory-200 border border-charcoal-900/10 space-y-4 hover:border-brass-600 transition-colors">
+                  <span className="font-serif text-3xl text-brass-600 font-light block">{service.num}</span>
+                  <h3 className="font-serif text-2xl text-charcoal-900">{service.title}</h3>
+                  <p className="text-xs sm:text-sm text-stone-700 font-light leading-relaxed">{service.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* G. PROCESS */}
+        <section className="py-24 sm:py-32 bg-[#0E0E0D] text-ivory-100 px-6 sm:px-10 lg:px-16 border-b border-white/10">
+          <div className="max-w-7xl mx-auto space-y-12">
+            <div className="space-y-3 border-b border-white/10 pb-6">
+              <span className="text-[10px] uppercase tracking-[0.35em] text-brass-400 font-medium block">
+                Methodology
+              </span>
+              <h2 className="font-serif text-3xl sm:text-5xl text-ivory-100 font-light">
+                Architectural Process
+              </h2>
+            </div>
+
+            <div className="divide-y divide-white/10 border-t border-b border-white/10">
+              {processSteps.map((step, idx) => (
+                <div
+                  key={step.num}
+                  onClick={() => setActiveProcess(idx)}
+                  className={`py-8 grid grid-cols-1 sm:grid-cols-12 gap-4 items-center cursor-pointer transition-colors px-4 -mx-4 ${
+                    activeProcess === idx ? "bg-white/[0.04]" : "hover:bg-white/[0.02]"
+                  }`}
+                >
+                  <div className="sm:col-span-2 font-serif text-3xl text-brass-400 font-light">{step.num}</div>
+                  <div className="sm:col-span-4 font-serif text-2xl text-ivory-100">{step.title}</div>
+                  <div className="sm:col-span-6 text-xs sm:text-sm text-stone-400 font-light leading-relaxed">{step.desc}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* H. FINAL CTA */}
+        <section className="py-28 bg-ivory-100 text-charcoal-900 text-center px-6 sm:px-10 lg:px-16">
+          <div className="max-w-3xl mx-auto space-y-6">
             <span className="text-[10px] uppercase tracking-[0.35em] text-brass-600 font-medium block">
-              Initiate Conversation
+              Initiate Commission
             </span>
-
-            <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light tracking-tight text-balance leading-tight text-charcoal-900">
-              “Tell us about the space you are imagining.”
+            <h2 className="font-serif text-3xl sm:text-6xl text-charcoal-900 font-light">
+              Tell us about the space you are imagining.
             </h2>
-
-            <p className="text-sm sm:text-base text-muted-slate font-light max-w-xl mx-auto leading-relaxed">
-              Selected residential, hospitality and cultural commissions are accepted each season.
+            <p className="text-xs sm:text-sm text-stone-600 font-light leading-relaxed">
+              We schedule preliminary spatial consultations to discuss site geography, budget parameters, and architectural vision.
             </p>
-
             <div className="pt-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.25em] px-9 py-4 bg-charcoal-900 text-bone-100 font-medium hover:bg-brass-500 hover:text-charcoal-950 transition-all duration-500 shadow-2xl group"
+                className="inline-flex items-center space-x-2 px-8 py-4 bg-charcoal-900 text-ivory-100 text-xs uppercase tracking-[0.25em] font-medium hover:bg-brass-600 transition-colors duration-300"
               >
                 <span>Begin a Commission</span>
-                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ArrowUpRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
         </section>
-      </div>
+
+      </main>
     </SmoothScrollProvider>
   );
 }

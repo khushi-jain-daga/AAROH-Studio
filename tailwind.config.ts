@@ -10,23 +10,49 @@ const config: Config = {
     extend: {
       colors: {
         charcoal: {
+          DEFAULT: "#0E0E0D",
           950: "#070707",
-          900: "#0B0B0B",
-          800: "#121212",
-          700: "#1A1A1A",
-          600: "#242424",
+          900: "#0E0E0D",
+          800: "#141413",
+          700: "#1F1F1D",
+          600: "#2B2B28",
         },
-        bone: {
-          50: "#FAF8F5",
-          100: "#F7F5F0",
-          200: "#F0EDE6",
-          300: "#E8E4DA",
+        ivory: {
+          DEFAULT: "#F4F0EA",
+          50: "#FAF8F4",
+          100: "#F4F0EA",
+          200: "#EAE4DA",
+          300: "#E0D7C9",
+        },
+        stone: {
+          DEFAULT: "#D8D0C4",
+          300: "#E2DBD1",
+          400: "#D8D0C4",
+          500: "#C3B9AB",
         },
         clay: {
-          300: "#D8C5B0",
-          400: "#C8B29B",
-          500: "#B59E85",
-          600: "#9E866C",
+          DEFAULT: "#A97856",
+          400: "#B88663",
+          500: "#A97856",
+          600: "#8F6141",
+        },
+        brass: {
+          DEFAULT: "#B59B6A",
+          300: "#C7AF81",
+          400: "#B59B6A",
+          500: "#9E8454",
+          600: "#856D40",
+        },
+        brown: {
+          DEFAULT: "#231D19",
+          900: "#231D19",
+          800: "#362E27",
+        },
+        bone: {
+          50: "#FAF8F4",
+          100: "#F4F0EA",
+          200: "#EAE4DA",
+          300: "#E0D7C9",
         },
         ash: {
           100: "#E8E5DF",
@@ -34,13 +60,7 @@ const config: Config = {
           300: "#D5D0C6",
           400: "#BDB7AA",
         },
-        brass: {
-          300: "#B4A182",
-          400: "#9E8B6D",
-          500: "#88765A",
-          600: "#706148",
-        },
-        "muted-slate": "#6E6A64",
+        "muted-slate": "#706B63",
       },
       fontFamily: {
         serif: ["var(--font-serif)", "Cormorant Garamond", "Playfair Display", "Georgia", "serif"],

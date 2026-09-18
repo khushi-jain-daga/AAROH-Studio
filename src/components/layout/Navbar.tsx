@@ -43,19 +43,19 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-[#0B0B0B]/90 backdrop-blur-xl border-b border-white/10 py-4 text-bone-100 shadow-2xl"
-            : "bg-gradient-to-b from-black/70 via-black/20 to-transparent py-7 text-white"
+            ? "bg-[#0E0E0D]/95 backdrop-blur-xl border-b border-white/10 py-4 text-ivory-100 shadow-2xl"
+            : "bg-[#0E0E0D]/90 backdrop-blur-md border-b border-white/5 py-5 text-ivory-100"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 flex items-center justify-between">
           {/* Brand Logo Mark */}
           <Link href="/" className="group flex flex-col items-start focus:outline-none">
-            <span className="font-serif tracking-[0.3em] text-xl font-light uppercase text-bone-100 transition-colors duration-500 group-hover:text-brass-300">
+            <span className="font-serif tracking-[0.3em] text-xl font-light uppercase text-ivory-100 transition-colors duration-500 group-hover:text-brass-400">
               AAROH
             </span>
-            <span className="text-[9px] tracking-[0.45em] text-ash-400 uppercase font-sans font-medium -mt-0.5 group-hover:text-bone-200 transition-colors">
+            <span className="text-[9px] tracking-[0.45em] text-stone-400 uppercase font-sans font-medium -mt-0.5 group-hover:text-ivory-200 transition-colors">
               STUDIO
             </span>
           </Link>
