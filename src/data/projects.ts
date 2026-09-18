@@ -402,11 +402,11 @@ export const PROJECTS: Project[] = [
     featured: false
   },
   {
-    id: "studio-aaroh-headquarters",
-    title: "AAROH Studio Atelier",
+    id: "vyom-atelier-headquarters",
+    title: "VYOM Atelier Headquarters",
     tagline: "Our experimental design lab and creative sanctuary in Jaipur.",
     category: "Commercial",
-    typology: "Design Studio & Material Library",
+    typology: "Design Atelier & Material Library",
     location: "Jaipur, Rajasthan",
     year: "2023",
     area: "4,500 sq. ft.",

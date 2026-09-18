@@ -5,38 +5,43 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Quote } from "lucide-react";
-import SectionHeader from "@/components/ui/SectionHeader";
 import { STUDIO_DATA } from "@/data/studio";
 
 export default function StudioPage() {
   return (
-    <div className="pt-32 pb-24 bg-ivory-100 min-h-screen space-y-24 md:space-y-32 text-charcoal-950 selection:bg-bronze-400 selection:text-ivory-100">
+    <div className="pt-32 pb-28 bg-bone-100 min-h-screen space-y-24 md:space-y-36 text-charcoal-900 selection:bg-charcoal-900 selection:text-bone-100">
       {/* 1. HERO HEADER */}
-      <section className="px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto space-y-12">
-        <SectionHeader
-          subtitle="About AAROH Studio"
-          title={STUDIO_DATA.intro.title}
-          description={STUDIO_DATA.intro.subtitle}
-        />
+      <section className="px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto space-y-10">
+        <div className="space-y-4 border-b border-charcoal-900/10 pb-8">
+          <span className="text-[10px] uppercase tracking-[0.35em] text-brass-600 font-medium block">
+            About the Practice
+          </span>
+          <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-charcoal-900 font-light tracking-tight leading-tight">
+            {STUDIO_DATA.intro.title}
+          </h1>
+          <p className="text-xs sm:text-sm md:text-base text-muted-slate font-light max-w-2xl leading-relaxed">
+            {STUDIO_DATA.intro.subtitle}
+          </p>
+        </div>
 
-        <div className="relative h-[480px] sm:h-[600px] w-full overflow-hidden border border-stone-300/80 bg-charcoal-900 shadow-2xl">
+        <div className="relative h-[480px] sm:h-[620px] w-full overflow-hidden bg-charcoal-900 border border-charcoal-900/10 shadow-2xl">
           <Image
             src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=90&w=2000"
-            alt="AAROH Studio Design Atelier"
+            alt="VYOM Atelier Design Lab"
             fill
-            className="object-cover filter contrast-[1.02]"
+            className="object-cover filter contrast-[1.04]"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-transparent to-transparent" />
-          <div className="absolute bottom-6 left-6 right-6 text-xs uppercase tracking-[0.25em] text-ivory-100 flex items-center justify-between border-t border-white/20 pt-4">
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B]/80 via-transparent to-transparent" />
+          <div className="absolute bottom-6 left-6 right-6 text-xs uppercase tracking-[0.25em] text-bone-100 flex items-center justify-between border-t border-white/20 pt-4">
             <span>Jaipur Atelier & Material Laboratory</span>
-            <span className="text-bronze-400 font-medium">Est. 2012</span>
+            <span className="text-brass-300 font-medium">Est. 2012</span>
           </div>
         </div>
       </section>
 
       {/* 2. MANIFESTO & FOUNDERS VISION */}
-      <section className="py-24 bg-[#0A0A0A] text-ivory-100 px-6 sm:px-10 lg:px-16 border-t border-b border-white/10">
+      <section className="py-28 bg-[#0B0B0B] text-bone-100 px-6 sm:px-10 lg:px-16 border-t border-b border-white/10">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -59,26 +64,26 @@ export default function StudioPage() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.15 }}
             className="lg:col-span-7 space-y-8"
           >
-            <span className="text-xs uppercase tracking-[0.35em] text-bronze-400 font-medium">
+            <span className="text-[10px] uppercase tracking-[0.35em] text-brass-400 font-medium block">
               Founders' Vision
             </span>
 
-            <blockquote className="font-serif text-3xl sm:text-4xl text-ivory-50 font-light leading-snug">
+            <blockquote className="font-serif text-3xl sm:text-4xl lg:text-5xl text-bone-100 font-light leading-snug">
               "{STUDIO_DATA.foundersNote.quote}"
             </blockquote>
 
-            <div className="space-y-4 text-stone-300 font-light text-sm sm:text-base leading-relaxed">
+            <div className="space-y-4 text-ash-300 font-light text-xs sm:text-sm leading-relaxed">
               {STUDIO_DATA.intro.manifesto.map((paragraph, i) => (
                 <p key={i}>{paragraph}</p>
               ))}
             </div>
 
             <div className="pt-4 border-t border-white/15">
-              <p className="font-serif text-xl text-ivory-100">{STUDIO_DATA.foundersNote.author}</p>
-              <p className="text-xs uppercase tracking-[0.25em] text-bronze-400">
+              <p className="font-serif text-xl text-bone-100">{STUDIO_DATA.foundersNote.author}</p>
+              <p className="text-[10px] uppercase tracking-[0.25em] text-brass-400 mt-0.5">
                 {STUDIO_DATA.foundersNote.title}
               </p>
             </div>
@@ -88,11 +93,14 @@ export default function StudioPage() {
 
       {/* 3. CORE VALUES */}
       <section className="px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto space-y-16">
-        <SectionHeader
-          subtitle="Pillars of Practice"
-          title="Studio Values"
-          description="Four fundamental tenets governing every spatial sketch, material specification, and structural decision."
-        />
+        <div className="space-y-3 border-b border-charcoal-900/10 pb-6">
+          <span className="text-[10px] uppercase tracking-[0.35em] text-brass-600 font-medium block">
+            Pillars of Practice
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl text-charcoal-900 font-light">
+            Core Design Principles
+          </h2>
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {STUDIO_DATA.values.map((val, idx) => (
@@ -102,13 +110,13 @@ export default function StudioPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="bg-ivory-200 border border-stone-300/80 p-8 space-y-4 hover:border-bronze-500 transition-colors"
+              className="bg-bone-200 border border-charcoal-900/10 p-8 space-y-4 hover:border-charcoal-900 transition-colors"
             >
-              <span className="font-serif text-3xl text-bronze-500 font-light block">
+              <span className="font-serif text-3xl text-brass-600 font-light block">
                 0{idx + 1}
               </span>
-              <h3 className="font-serif text-2xl text-charcoal-950">{val.title}</h3>
-              <p className="text-xs sm:text-sm text-soft-grey font-light leading-relaxed">
+              <h3 className="font-serif text-2xl text-charcoal-900">{val.title}</h3>
+              <p className="text-xs sm:text-sm text-muted-slate font-light leading-relaxed">
                 {val.description}
               </p>
             </motion.div>
@@ -116,14 +124,17 @@ export default function StudioPage() {
         </div>
       </section>
 
-      {/* 4. CLIENT TESTIMONIALS SECTION (TRUST BUILDING) */}
-      <section className="py-24 bg-ivory-200 px-6 sm:px-10 lg:px-16 border-t border-b border-stone-300/60">
+      {/* 4. CLIENT TESTIMONIALS */}
+      <section className="py-28 bg-bone-200 px-6 sm:px-10 lg:px-16 border-t border-b border-charcoal-900/10">
         <div className="max-w-7xl mx-auto space-y-16">
-          <SectionHeader
-            subtitle="Client Perspectives"
-            title="Reflections from Estate & Resort Owners"
-            description="Statements from discerning homeowners and hospitality visionaries who partnered with AAROH Studio."
-          />
+          <div className="space-y-3">
+            <span className="text-[10px] uppercase tracking-[0.35em] text-brass-600 font-medium block">
+              Client Perspectives
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl text-charcoal-900 font-light">
+              Reflections from Estate & Resort Owners
+            </h2>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {STUDIO_DATA.testimonials.map((t, idx) => (
@@ -133,18 +144,18 @@ export default function StudioPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: idx * 0.1 }}
-                className="bg-ivory-100 border border-stone-300/80 p-8 space-y-6 flex flex-col justify-between shadow-sm"
+                className="bg-bone-100 border border-charcoal-900/10 p-8 space-y-6 flex flex-col justify-between shadow-sm"
               >
                 <div className="space-y-4">
-                  <Quote className="w-8 h-8 text-bronze-400 opacity-60" />
-                  <p className="text-xs sm:text-sm text-soft-grey font-light italic leading-relaxed">
+                  <Quote className="w-7 h-7 text-brass-400 opacity-70" />
+                  <p className="text-xs sm:text-sm text-muted-slate font-light italic leading-relaxed">
                     "{t.quote}"
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-stone-300/60 space-y-1">
-                  <p className="font-serif text-lg text-charcoal-950">{t.client}</p>
-                  <p className="text-[11px] uppercase tracking-[0.2em] text-bronze-600 font-medium">
+                <div className="pt-4 border-t border-charcoal-900/10 space-y-1">
+                  <p className="font-serif text-lg text-charcoal-900">{t.client}</p>
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-brass-600 font-medium">
                     {t.role} • {t.project} ({t.location})
                   </p>
                 </div>
@@ -156,11 +167,14 @@ export default function StudioPage() {
 
       {/* 5. TEAM SPOTLIGHT */}
       <section className="px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto space-y-16">
-        <SectionHeader
-          subtitle="Leadership & Artisans"
-          title="Senior Practice Team"
-          description="Our interdisciplinary team of architects, interior architects, and structural conservators."
-        />
+        <div className="space-y-3 border-b border-charcoal-900/10 pb-6">
+          <span className="text-[10px] uppercase tracking-[0.35em] text-brass-600 font-medium block">
+            Leadership & Artisans
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl text-charcoal-900 font-light">
+            Senior Practice Team
+          </h2>
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {STUDIO_DATA.team.map((member, idx) => (
@@ -170,7 +184,7 @@ export default function StudioPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: idx * 0.1 }}
-              className="space-y-4 bg-ivory-200 border border-stone-300/80 p-5 group"
+              className="space-y-4 bg-bone-200 border border-charcoal-900/10 p-5 group"
             >
               <div className="relative h-72 w-full overflow-hidden bg-charcoal-900">
                 <Image
@@ -181,11 +195,11 @@ export default function StudioPage() {
                 />
               </div>
               <div className="space-y-1">
-                <h3 className="font-serif text-xl text-charcoal-950">{member.name}</h3>
-                <p className="text-[11px] uppercase tracking-[0.2em] text-bronze-600 font-medium">
+                <h3 className="font-serif text-xl text-charcoal-900">{member.name}</h3>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-brass-600 font-medium">
                   {member.role}
                 </p>
-                <p className="text-xs text-soft-grey font-light pt-2 leading-relaxed">
+                <p className="text-xs text-muted-slate font-light pt-2 leading-relaxed">
                   {member.bio}
                 </p>
               </div>
@@ -196,13 +210,16 @@ export default function StudioPage() {
 
       {/* 6. PRESS FEATURES */}
       <section className="px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto space-y-12">
-        <SectionHeader
-          subtitle="Editorial Recognition"
-          title="Press & Monograph Features"
-          description="Selected publications spotlighting AAROH Studio's contribution to modern desert architecture and quiet interior design."
-        />
+        <div className="space-y-3 border-b border-charcoal-900/10 pb-6">
+          <span className="text-[10px] uppercase tracking-[0.35em] text-brass-600 font-medium block">
+            Editorial Recognition
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl text-charcoal-900 font-light">
+            Press & Monograph Features
+          </h2>
+        </div>
 
-        <div className="divide-y divide-stone-300 border-t border-b border-stone-300">
+        <div className="divide-y divide-charcoal-900/10 border-t border-b border-charcoal-900/10">
           {STUDIO_DATA.press.map((item, idx) => (
             <motion.div
               key={item.headline}
@@ -210,17 +227,17 @@ export default function StudioPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="py-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-stone-200/50 transition-colors px-4"
+              className="py-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-bone-200/60 transition-colors px-4"
             >
               <div className="space-y-1">
-                <span className="text-[11px] uppercase tracking-[0.25em] text-bronze-600 font-medium">
+                <span className="text-[10px] uppercase tracking-[0.25em] text-brass-600 font-medium">
                   {item.publication} • {item.year}
                 </span>
-                <h3 className="font-serif text-xl text-charcoal-950 font-light">
+                <h3 className="font-serif text-xl text-charcoal-900 font-light">
                   "{item.headline}"
                 </h3>
               </div>
-              <div className="flex items-center text-xs uppercase tracking-[0.2em] text-stone-500 hover:text-charcoal-950 shrink-0">
+              <div className="flex items-center text-xs uppercase tracking-[0.2em] text-muted-slate hover:text-charcoal-900 shrink-0">
                 <span>Read Feature</span>
                 <ArrowUpRight className="w-3.5 h-3.5 ml-1" />
               </div>
@@ -230,23 +247,22 @@ export default function StudioPage() {
       </section>
 
       {/* Subtle Availability CTA */}
-      <section className="py-24 bg-[#0A0A0A] text-ivory-100 text-center px-6 sm:px-10 lg:px-16 border-t border-white/10">
+      <section className="py-28 bg-[#0B0B0B] text-bone-100 text-center px-6 sm:px-10 lg:px-16 border-t border-white/10">
         <div className="max-w-3xl mx-auto space-y-6">
-          <span className="text-xs uppercase tracking-[0.3em] text-bronze-400 font-medium">
-            Initiate Conversation
+          <span className="text-[10px] uppercase tracking-[0.35em] text-brass-400 font-medium block">
+            Initiate Dialogue
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl text-ivory-50 font-light">
+          <h2 className="font-serif text-3xl sm:text-4xl text-bone-100 font-light">
             Request Studio Availability
           </h2>
-          <p className="text-xs sm:text-sm text-stone-300 font-light leading-relaxed">
+          <p className="text-xs sm:text-sm text-ash-300 font-light leading-relaxed">
             We schedule preliminary consultations with estate owners, hospitality developers, and heritage proprietors.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center space-x-2 px-8 py-3.5 bg-bronze-400 text-charcoal-950 text-xs uppercase tracking-[0.25em] font-medium hover:bg-ivory-100 transition-colors shadow-2xl"
+            className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.25em] text-brass-300 hover:text-white border-b border-brass-400 pb-1 font-medium transition-colors"
           >
-            <span>Begin Consultation Dialogue</span>
-            <ArrowUpRight className="w-4 h-4" />
+            <span>Begin Commission Dialogue ↗</span>
           </Link>
         </div>
       </section>

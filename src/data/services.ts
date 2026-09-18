@@ -31,7 +31,7 @@ export const SERVICES: Service[] = [
   {
     id: "interior-design",
     number: "02",
-    title: "Interior Design",
+    title: "Interior Architecture",
     tagline: "Atmospheric, material-rich interiors that feel lived-in before they are occupied.",
     description: "We craft interior spaces centered around tactile calm, custom joinery, and poetic proportions. From floor finishes to lighting temperature, every micro-detail is intentionally resolved.",
     philosophy: "Interiors should wrap around human life with warmth. We reject transient trends in favor of natural stone, unpolished timber, hand-plastered walls, and bespoke furniture.",
@@ -48,7 +48,7 @@ export const SERVICES: Service[] = [
   {
     id: "hospitality-spaces",
     number: "03",
-    title: "Hospitality Spaces",
+    title: "Hospitality Retreats",
     tagline: "Immersive boutique resorts, sanctuaries, and dining concepts with strong narrative identities.",
     description: "We design hospitality destinations that offer guests profound pause and sensory delight. Our approach blends operational efficiency with artistic storytelling.",
     philosophy: "A great hospitality environment creates unforgettable memories through atmosphere—the weight of a linen curtain, the scent of cedar woodwork, the glow of low-slung sconces.",
@@ -65,9 +65,9 @@ export const SERVICES: Service[] = [
   {
     id: "renovation-adaptive-reuse",
     number: "04",
-    title: "Renovation & Adaptive Reuse",
+    title: "Adaptive Reuse & Haveli Restoration",
     tagline: "Honoring historical patina while infusing contemporary functionality and spatial clarity.",
-    description: "We breathing second lives into aging havelis, heritage structures, and mid-century modern buildings by preserving historical character while inserting crisp modern interventions.",
+    description: "We breathe second lives into aging havelis, heritage structures, and mid-century modern buildings by preserving historical character while inserting crisp modern interventions.",
     philosophy: "Heritage is not frozen in amber. We believe in respectful dialogue between old masonry walls and sharp, minimalist contemporary steel and glass.",
     deliverables: [
       "Heritage Structure Assessment & Mapping",
@@ -82,7 +82,7 @@ export const SERVICES: Service[] = [
   {
     id: "styling-art-direction",
     number: "05",
-    title: "Styling & Art Direction",
+    title: "Art Curation & Direction",
     tagline: "Curating rare fine art, antique objects, and artisanal decor to complete the spatial narrative.",
     description: "The final layer of spatial design. We source hand-crafted ceramics, commissioned sculptural pieces, rare textiles, and vintage furniture from master craftsmen across Asia and Europe.",
     philosophy: "Objects carry energy. Rather than populating spaces with catalog decor, we carefully curate singular pieces that possess soul and historical weight.",

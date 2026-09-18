@@ -4,15 +4,15 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowUpRight, MapPin, Mail } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const NAV_LINKS = [
-  { name: "Home", href: "/" },
-  { name: "Projects", href: "/projects" },
-  { name: "Studio", href: "/studio" },
-  { name: "Services", href: "/services" },
+  { name: "Work", href: "/" },
+  { name: "Archive", href: "/projects" },
+  { name: "Atelier", href: "/studio" },
+  { name: "Manifesto", href: "/services" },
   { name: "Journal", href: "/journal" },
-  { name: "Contact", href: "/contact" },
+  { name: "Commission", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -22,18 +22,16 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 30);
+      setScrolled(window.scrollY > 40);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [pathname]);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -47,18 +45,18 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
           scrolled
-            ? "bg-[#0A0A0A]/90 backdrop-blur-xl border-b border-white/10 py-4 text-ivory-100 shadow-2xl"
-            : "bg-gradient-to-b from-black/80 via-black/30 to-transparent py-7 text-white"
+            ? "bg-[#0B0B0B]/90 backdrop-blur-xl border-b border-white/10 py-4 text-bone-100 shadow-2xl"
+            : "bg-gradient-to-b from-black/70 via-black/20 to-transparent py-7 text-white"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 flex items-center justify-between">
           {/* Brand Logo Mark */}
           <Link href="/" className="group flex flex-col items-start focus:outline-none">
-            <span className="font-serif tracking-[0.3em] text-lg sm:text-xl font-light uppercase text-ivory-50 transition-colors duration-500 group-hover:text-bronze-400">
-              AAROH STUDIO
+            <span className="font-serif tracking-[0.3em] text-xl font-light uppercase text-bone-100 transition-colors duration-500 group-hover:text-brass-300">
+              VYOM
             </span>
-            <span className="text-[9px] tracking-[0.4em] text-stone-400 uppercase font-sans font-medium mt-0.5 group-hover:text-stone-200 transition-colors">
-              Jaipur • Architecture & Interiors
+            <span className="text-[9px] tracking-[0.45em] text-ash-400 uppercase font-sans font-medium -mt-0.5 group-hover:text-bone-200 transition-colors">
+              ATELIER
             </span>
           </Link>
 
@@ -70,17 +68,17 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-[11px] uppercase tracking-[0.25em] transition-all duration-300 relative py-1.5 ${
+                  className={`text-[11px] uppercase tracking-[0.25em] transition-all duration-300 relative py-1 ${
                     isActive
-                      ? "text-bronze-400 font-medium"
-                      : "text-stone-300 hover:text-white"
+                      ? "text-brass-300 font-medium"
+                      : "text-ash-300 hover:text-white"
                   }`}
                 >
                   {link.name}
                   {isActive && (
                     <motion.div
-                      layoutId="active-nav-line"
-                      className="absolute bottom-0 left-0 right-0 h-[1px] bg-bronze-400 shadow-[0_0_8px_rgba(197,160,89,0.8)]"
+                      layoutId="vyom-nav-line"
+                      className="absolute bottom-0 left-0 right-0 h-[1px] bg-brass-300"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -89,13 +87,13 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Action Button */}
-          <div className="hidden md:flex items-center space-x-6">
+          {/* Subtle Text Link Action */}
+          <div className="hidden md:flex items-center">
             <Link
               href="/contact"
-              className="inline-flex items-center space-x-2 text-[11px] uppercase tracking-[0.25em] px-6 py-2.5 border border-bronze-400/80 text-bronze-400 hover:bg-bronze-400 hover:text-charcoal-950 transition-all duration-500 shadow-md group"
+              className="inline-flex items-center space-x-1.5 text-[11px] uppercase tracking-[0.25em] text-brass-300 hover:text-white transition-colors duration-300 group"
             >
-              <span>Begin Inquiry</span>
+              <span>Begin a Commission</span>
               <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
           </div>
@@ -103,15 +101,15 @@ export default function Navbar() {
           {/* Mobile Menu Trigger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-stone-200 hover:text-bronze-400 focus:outline-none transition-colors"
-            aria-label="Toggle Navigation Menu"
+            className="md:hidden text-xs uppercase tracking-[0.25em] text-bone-100 hover:text-brass-300 focus:outline-none transition-colors"
+            aria-label="Toggle Menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6 text-bronze-400" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? "CLOSE" : "MENU"}
           </button>
         </div>
       </header>
 
-      {/* Mobile Menu Fullscreen Overlay */}
+      {/* Mobile Fullscreen Overlay */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -119,31 +117,29 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-[#0A0A0A] text-ivory-100 flex flex-col justify-between p-8 pt-28 md:hidden overflow-y-auto border-b border-white/10"
+            className="fixed inset-0 z-40 bg-[#0B0B0B] text-bone-100 flex flex-col justify-between p-8 pt-28 md:hidden overflow-y-auto"
           >
-            {/* Background Aesthetic Watermark */}
-            <div className="absolute right-[-10%] bottom-[10%] text-[140px] font-serif text-white/[0.03] pointer-events-none select-none">
-              AAROH
+            <div className="absolute right-[-10%] bottom-[15%] text-[140px] font-serif text-white/[0.025] pointer-events-none select-none">
+              VYOM
             </div>
 
-            {/* Nav Links */}
-            <div className="flex flex-col space-y-6 relative z-10">
-              <span className="text-[10px] uppercase tracking-[0.35em] text-bronze-400 border-b border-white/10 pb-3 block">
-                Atelier Navigation
+            <div className="flex flex-col space-y-7 relative z-10">
+              <span className="text-[10px] uppercase tracking-[0.35em] text-brass-400 border-b border-white/10 pb-3 block">
+                Atelier Directory
               </span>
               {NAV_LINKS.map((link, idx) => (
                 <motion.div
                   key={link.name}
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -16 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: idx * 0.05 + 0.1 }}
+                  transition={{ delay: idx * 0.05 + 0.08 }}
                 >
                   <Link
                     href={link.href}
                     className={`text-3xl font-serif tracking-wide block transition-all ${
                       pathname === link.href
-                        ? "text-bronze-400 italic pl-3 border-l-2 border-bronze-400"
-                        : "text-stone-300 hover:text-white"
+                        ? "text-brass-300 italic pl-3 border-l border-brass-400"
+                        : "text-ash-300 hover:text-white"
                     }`}
                   >
                     {link.name}
@@ -152,33 +148,20 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* Mobile Footer Info */}
             <div className="pt-8 border-t border-white/10 space-y-6 relative z-10">
-              <div className="space-y-3 text-xs text-stone-300 font-light">
-                <div className="flex items-start space-x-2">
-                  <MapPin className="w-4 h-4 text-bronze-400 shrink-0 mt-0.5" />
-                  <div>
-                    <p className="uppercase tracking-wider text-ivory-100 font-medium">Jaipur Studio</p>
-                    <p className="text-stone-400">C-Scheme, Jaipur 302001, Rajasthan, India</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-2 border-t border-white/5 pt-3">
-                  <Mail className="w-4 h-4 text-bronze-400 shrink-0 mt-0.5" />
-                  <div>
-                    <p className="uppercase tracking-wider text-ivory-100 font-medium">Inquiries</p>
-                    <a href="mailto:concierge@aarohstudio.com" className="text-bronze-400 hover:underline">
-                      concierge@aarohstudio.com
-                    </a>
-                  </div>
-                </div>
+              <div className="text-xs text-ash-400 font-light space-y-1">
+                <p className="uppercase tracking-wider text-bone-100 font-medium">Jaipur Atelier</p>
+                <p>32 Prithviraj Road, C-Scheme, Jaipur 302001, India</p>
+                <a href="mailto:inquiry@vyomatelier.com" className="text-brass-300 hover:underline block pt-1">
+                  inquiry@vyomatelier.com
+                </a>
               </div>
 
               <Link
                 href="/contact"
-                className="w-full flex items-center justify-center space-x-2 text-xs uppercase tracking-[0.25em] px-6 py-4 bg-bronze-400 text-charcoal-950 font-medium hover:bg-ivory-100 transition-colors shadow-xl"
+                className="w-full flex items-center justify-between text-xs uppercase tracking-[0.25em] py-3.5 border-b border-brass-400 text-brass-300 hover:text-white transition-colors"
               >
-                <span>Initiate Project Inquiry</span>
+                <span>Begin a Commission</span>
                 <ArrowUpRight className="w-4 h-4" />
               </Link>
             </div>

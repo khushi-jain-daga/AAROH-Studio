@@ -27,35 +27,35 @@ export interface Testimonial {
 
 export const STUDIO_DATA = {
   intro: {
-    title: "Quiet, material-rich architecture born from light, memory, and geographic context.",
-    subtitle: "AAROH Studio is a multidisciplinary architectural and interior design studio headquartered in Jaipur, India. We craft refined residential, hospitality, and cultural spaces with a quiet, timeless sensibility.",
+    title: "Architecture for spaces that remember.",
+    subtitle: "VYOM Atelier is a quiet architecture and interior atelier headquartered in Jaipur, India. We shape refined residential, hospitality, and cultural spaces through light, proportion, silence and material restraint.",
     manifesto: [
       "We believe architecture should feel grounded before it is modern. It should listen to the whispers of its landscape, respect local climate dynamics, and honor the tactile wisdom of master craftspeople.",
-      "In a world consumed by hyper-fast construction and disposable design trends, AAROH Studio stands for spatial restraint, material authenticity, and enduring elegance."
+      "In a world consumed by hyper-fast construction and disposable design trends, VYOM Atelier stands for spatial restraint, material authenticity, and enduring elegance."
     ]
   },
   foundersNote: {
-    quote: "A space should feel lived-in long before it is occupied — layered with memory, touched by light, and deeply connected to its physical site.",
+    quote: "Luxury is not excess. It is the discipline of knowing what to leave untouched.",
     author: "Aarav Sharma & Rhea Singhania",
     title: "Founding Principals",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=85&w=1000"
   },
   values: [
     {
-      title: "Context",
-      description: "We never transplant generic designs into unique landscapes. Every project begins with a deep reading of local climate, sun trajectories, wind currents, and cultural heritage."
+      title: "Light before form",
+      description: "Before drawing a wall, we calculate how morning sun washes over natural stone surfaces."
     },
     {
-      title: "Craft",
-      description: "We collaborate intimately with traditional stone carvers, lime plasters, master carpenters, and bronze metalworkers to keep tactile human artistry at the center of modern living."
+      title: "Materials with memory",
+      description: "We specify honest natural materials that accept human patina and weather gracefully over decades."
     },
     {
-      title: "Restraint",
-      description: "Luxury is not excess ornament. True luxury lives in volumetric clarity, generous proportions, precise shadow lines, and calm material consistency."
+      title: "Silence as a design tool",
+      description: "Acoustic compression and spatial restraint create profound stillness inside modern homes."
     },
     {
-      title: "Longevity",
-      description: "We specify honest natural materials that accept patina gracefully, ensuring our buildings gain character over decades rather than demanding cosmetic replacement."
+      title: "Contextual permanence",
+      description: "Every commission begins with topographic reading, solar trajectories, and regional stone heritage."
     }
   ],
   metrics: [
@@ -67,13 +67,13 @@ export const STUDIO_DATA = {
   team: [
     {
       name: "Aarav Sharma",
-      role: "Co-Founder & Design Director (Architecture)",
+      role: "Co-Founder & Design Principal (Architecture)",
       bio: "Master of Architecture from CEPT University. Specializes in passive solar cooling, volumetric spatial planning, and natural stone construction.",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=85&w=800"
     },
     {
       name: "Rhea Singhania",
-      role: "Co-Founder & Creative Director (Interiors & FF&E)",
+      role: "Co-Founder & Creative Principal (Interiors)",
       bio: "Alumna of Parsons School of Design, Paris. Focuses on spatial acoustics, bespoke furniture curation, and natural lime plaster finishes.",
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=85&w=800"
     },
@@ -93,7 +93,7 @@ export const STUDIO_DATA = {
   press: [
     {
       publication: "Architectural Digest",
-      headline: "AAROH Studio: The Jaipur Practice Redefining Modern Desert Luxury",
+      headline: "VYOM Atelier: The Jaipur Practice Redefining Modern Desert Luxury",
       year: "2024"
     },
     {
@@ -108,13 +108,13 @@ export const STUDIO_DATA = {
     },
     {
       publication: "Design Anthology",
-      headline: "Quiet Sanctuaries: Exploring the Tactile Interiors of AAROH Studio",
+      headline: "Quiet Sanctuaries: Exploring the Tactile Interiors of VYOM Atelier",
       year: "2023"
     }
   ],
   testimonials: [
     {
-      quote: "AAROH Studio transformed our family plot into a timeless sanctuary. The passive cooling of the central courtyard means we rarely turn on air conditioning even in peak Jaipur summers.",
+      quote: "VYOM Atelier transformed our family plot into a timeless sanctuary. The passive cooling of the central courtyard means we rarely turn on air conditioning even in peak Jaipur summers.",
       client: "Vikramaditya & Gayatri Singh",
       role: "Estate Owners",
       project: "The Courtyard House",
@@ -128,7 +128,7 @@ export const STUDIO_DATA = {
       location: "Rishikesh"
     },
     {
-      quote: "Restoring an 18th-century merchant haveli without damaging historic frescoes required immense architectural discipline. AAROH Studio executed it with reverence and precision.",
+      quote: "Restoring an 18th-century merchant haveli without damaging historic frescoes required immense architectural discipline. VYOM Atelier executed it with reverence and precision.",
       client: "Gajendra Singh Jodha",
       role: "Heritage Hotel Proprietor",
       project: "Tales of Terracotta",

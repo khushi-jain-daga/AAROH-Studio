@@ -23,7 +23,7 @@ export const ARTICLES: Article[] = [
       "In an era dominated by synthetic emulsion paints and uniform drywall, natural lime plaster offers a return to architecture that breathes.",
       "Rooted in centuries-old Rajasthani craftsmanship, traditional Araish plaster is created using slaked lime, marble dust, and natural binders like egg white and curd. The resulting finish possesses a soft, translucent sheen that shifts hue as daylight changes.",
       "Beyond its undeniable aesthetic grace, lime plaster absorbs atmospheric carbon dioxide as it cures, regulating indoor humidity organically without toxic chemical emissions.",
-      "When we specify lime plaster for residential sanctums, we invite light to play across subtle hand-troweled imperfections—reminding us that true luxury lies in natural texture rather than mechanical perfection."
+      "When we specify lime plaster at VYOM Atelier, we invite light to play across subtle hand-troweled imperfections—reminding us that true luxury lies in natural texture rather than mechanical perfection."
     ],
     image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=85&w=1200"
   },
@@ -37,7 +37,7 @@ export const ARTICLES: Article[] = [
     excerpt: "How intentional acoustic layering and spatial compression create profound stillness inside chaotic cities.",
     content: [
       "Silence has become the rarest luxury commodity of modern city living. As urban environments grow increasingly chaotic, the home must serve as a sanctuary of acoustic tranquility.",
-      "Acoustic comfort is not merely about soundproofing windows; it is about how sound behaves within a room. Hard, reflective surfaces like polished marble and glass bounce sound waves continuously, creating subliminal mental fatigue.",
+      "Acoustic comfort is not merely about soundproofing windows; it is about how sound behaves within a room. Hard, reflective surfaces like polished marble bounce sound waves continuously, creating subliminal mental fatigue.",
       "By strategically integrating porous stone, micro-perforated timber panels, and heavy un-dyed linen drapery, we dampen ambient noise reverberation without smothering spatial vitality.",
       "A silent room allows the gentle rustle of courtyard leaves and the trickle of water features to emerge into consciousness."
     ],
