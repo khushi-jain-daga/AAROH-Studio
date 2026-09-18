@@ -10,7 +10,7 @@ export default function JournalPage() {
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
 
   return (
-    <div className="pt-32 pb-28 bg-bone-100 min-h-screen space-y-16 text-charcoal-900 selection:bg-charcoal-900 selection:text-bone-100">
+    <div className="pt-28 pb-20 bg-bone-100 min-h-screen space-y-12 text-charcoal-900 selection:bg-charcoal-900 selection:text-bone-100">
       {/* Page Header */}
       <section className="px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto space-y-6">
         <div className="space-y-4 border-b border-charcoal-900/10 pb-8">
@@ -28,14 +28,10 @@ export default function JournalPage() {
 
       {/* Articles Grid */}
       <section className="px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {ARTICLES.map((article, idx) => (
-            <motion.div
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {ARTICLES.map((article) => (
+            <div
               key={article.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: idx * 0.1 }}
               onClick={() => setSelectedArticle(article)}
               className="group flex flex-col bg-bone-200 border border-charcoal-900/10 cursor-pointer hover:border-charcoal-900 transition-all duration-300"
             >
@@ -73,7 +69,7 @@ export default function JournalPage() {
                   <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </section>

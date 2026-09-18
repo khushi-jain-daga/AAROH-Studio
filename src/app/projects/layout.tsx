@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Selected Spatial Works | VYOM Atelier",
+  title: "Selected Spatial Works | AAROH Studio",
   description:
-    "Explore 8 luxury architectural case studies across residential havelis, lakeside villas, boutique wellness sanctuaries, and high-rise sky penthouses.",
+    "Explore luxury architectural case studies across residential havelis, lakeside villas, boutique wellness sanctuaries, and high-rise sky penthouses.",
   openGraph: {
-    title: "Selected Spatial Works | VYOM Atelier",
-    description: "Architectural & Interior Design Monograph Archive by VYOM Atelier.",
+    title: "Selected Spatial Works | AAROH Studio",
+    description: "Architectural & Interior Design Monograph Archive by AAROH Studio.",
   },
 };
 

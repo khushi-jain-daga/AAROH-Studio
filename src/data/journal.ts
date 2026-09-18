@@ -23,7 +23,7 @@ export const ARTICLES: Article[] = [
       "In an era dominated by synthetic emulsion paints and uniform drywall, natural lime plaster offers a return to architecture that breathes.",
       "Rooted in centuries-old Rajasthani craftsmanship, traditional Araish plaster is created using slaked lime, marble dust, and natural binders like egg white and curd. The resulting finish possesses a soft, translucent sheen that shifts hue as daylight changes.",
       "Beyond its undeniable aesthetic grace, lime plaster absorbs atmospheric carbon dioxide as it cures, regulating indoor humidity organically without toxic chemical emissions.",
-      "When we specify lime plaster at VYOM Atelier, we invite light to play across subtle hand-troweled imperfections—reminding us that true luxury lies in natural texture rather than mechanical perfection."
+      "When we specify lime plaster at AAROH Studio, we invite light to play across subtle hand-troweled imperfections—reminding us that true luxury lies in natural texture rather than mechanical perfection."
     ],
     image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=85&w=1200"
   },

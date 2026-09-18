@@ -50,7 +50,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="pt-32 pb-24 bg-bone-100 min-h-screen space-y-24 md:space-y-32 text-charcoal-950 selection:bg-charcoal-900 selection:text-bone-100">
+    <div className="pt-28 pb-20 bg-bone-100 min-h-screen space-y-16 md:space-y-20 text-charcoal-950 selection:bg-charcoal-900 selection:text-bone-100">
       {/* Page Header */}
       <section className="px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto space-y-6">
         <div className="space-y-4 border-b border-charcoal-900/10 pb-8">
@@ -285,8 +285,8 @@ export default function ContactPage() {
                     <p className="font-medium text-bone-100 uppercase tracking-wider mb-1">
                       Digital Desk
                     </p>
-                    <p className="text-brass-300">inquiry@vyomatelier.com</p>
-                    <p className="text-ash-400 mt-0.5">press@vyomatelier.com</p>
+                    <p className="text-brass-300">inquiry@aarohstudio.com</p>
+                    <p className="text-ash-400 mt-0.5">press@aarohstudio.com</p>
                   </div>
                 </div>
 
@@ -305,7 +305,7 @@ export default function ContactPage() {
                   <Clock className="w-4 h-4 text-brass-300 shrink-0 mt-0.5" />
                   <div>
                     <p className="font-medium text-bone-100 uppercase tracking-wider mb-1">
-                      Atelier Hours
+                      Studio Hours
                     </p>
                     <p>Monday – Friday: 09:30 AM – 06:30 PM IST</p>
                     <p className="text-ash-400">Consultations By Appointment Only</p>

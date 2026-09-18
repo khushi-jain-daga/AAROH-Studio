@@ -53,12 +53,12 @@ export default function HomePage() {
     <div className="space-y-0 overflow-hidden bg-bone-100 text-charcoal-900 selection:bg-charcoal-900 selection:text-bone-100">
       
       {/* 1. HERO SECTION (FULL VIEWPORT ARCHITECTURAL FILM OPENING) */}
-      <section className="relative min-h-[88vh] sm:min-h-screen w-full flex flex-col justify-between pt-28 pb-10 sm:pt-36 sm:pb-14 px-6 sm:px-10 lg:px-16 overflow-hidden">
+      <section className="relative min-h-[85vh] sm:min-h-screen w-full flex flex-col justify-between pt-28 pb-10 sm:pt-32 sm:pb-14 px-6 sm:px-10 lg:px-16 overflow-hidden">
         {/* Background Architectural Video / High-Res Atmosphere */}
         <div className="absolute inset-0 z-0 bg-[#0B0B0B]">
           <Image
             src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=90&w=2400"
-            alt="VYOM Atelier Architecture"
+            alt="AAROH Studio Architecture"
             fill
             className="object-cover opacity-50 filter contrast-[1.08] brightness-[0.7]"
             priority
@@ -68,7 +68,7 @@ export default function HomePage() {
 
         {/* Editorial Side Watermark Label */}
         <div className="hidden lg:block absolute left-8 top-1/2 -translate-y-1/2 z-10 font-sans text-[10px] uppercase tracking-[0.4em] text-ash-400 writing-mode-vertical pointer-events-none opacity-60">
-          VYOM ATELIER • SPATIAL MONOGRAPH • 2024
+          AAROH STUDIO • SPATIAL MONOGRAPH
         </div>
 
         {/* Top Editorial Details Bar */}
@@ -82,32 +82,25 @@ export default function HomePage() {
         </div>
 
         {/* Asymmetric Hero Headline & Text Links */}
-        <div className="relative z-10 max-w-5xl space-y-8 my-auto pt-8">
+        <div className="relative z-10 max-w-5xl space-y-8 my-auto pt-6">
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-[95px] font-light tracking-tight leading-[1.02] text-bone-100"
+            className="font-serif text-4xl sm:text-7xl md:text-8xl lg:text-[90px] font-light tracking-tight leading-[1.02] text-bone-100"
           >
             Architecture for spaces that remember.
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-xs sm:text-sm md:text-base text-ash-300 font-light max-w-xl leading-relaxed tracking-wide"
           >
-            VYOM Atelier shapes residences, retreats and cultural interiors through light, proportion and material restraint.
+            AAROH Studio shapes residences, retreats and cultural interiors through light, proportion and material restraint.
           </motion.p>
 
-          {/* Minimal Text Links (No Loud Buttons) */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-center space-x-10 pt-4"
-          >
+          {/* Minimal Text Links */}
+          <div className="flex items-center space-x-10 pt-2">
             <Link
               href="#signature-project"
               className="group flex items-center space-x-2 text-xs uppercase tracking-[0.25em] text-bone-100 hover:text-brass-300 transition-colors"
@@ -123,7 +116,7 @@ export default function HomePage() {
               <span>Begin a Commission</span>
               <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
-          </motion.div>
+          </div>
         </div>
 
         {/* Bottom Hero Bar */}
@@ -138,8 +131,8 @@ export default function HomePage() {
 
 
       {/* 2. SIGNATURE PROJECT FEATURE (MAGAZINE SPREAD IMMERSIVE LAYOUT) */}
-      <section id="signature-project" className="py-28 md:py-40 bg-bone-100 px-6 sm:px-10 lg:px-16 border-b border-charcoal-900/10">
-        <div className="max-w-7xl mx-auto space-y-12">
+      <section id="signature-project" className="py-20 md:py-28 bg-bone-100 px-6 sm:px-10 lg:px-16 border-b border-charcoal-900/10">
+        <div className="max-w-7xl mx-auto space-y-10">
           {/* Section Header */}
           <div className="flex items-center justify-between border-b border-charcoal-900/10 pb-4">
             <span className="text-[10px] uppercase tracking-[0.35em] text-brass-600 font-medium">
@@ -151,16 +144,10 @@ export default function HomePage() {
           </div>
 
           {/* Magazine Spread Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Left: Huge Vertical Image with Offset Thumbnail */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1 }}
-              className="lg:col-span-7 relative"
-            >
-              <div className="relative h-[560px] sm:h-[680px] w-full overflow-hidden bg-charcoal-900 border border-charcoal-900/10 shadow-2xl">
+            <div className="lg:col-span-7 relative">
+              <div className="relative h-[440px] sm:h-[580px] w-full overflow-hidden bg-charcoal-900 border border-charcoal-900/10 shadow-2xl">
                 <Image
                   src={featuredProject.heroImage}
                   alt={featuredProject.title}
@@ -170,7 +157,7 @@ export default function HomePage() {
               </div>
 
               {/* Offset Layered Image Accent */}
-              <div className="hidden sm:block absolute bottom-[-30px] right-[-30px] w-64 h-72 border-4 border-bone-100 shadow-2xl overflow-hidden z-20">
+              <div className="hidden sm:block absolute bottom-[-20px] right-[-20px] w-56 h-64 border-4 border-bone-100 shadow-2xl overflow-hidden z-20">
                 <Image
                   src={featuredProject.gallery[0]?.url || featuredProject.heroImage}
                   alt={featuredProject.title}
@@ -178,21 +165,15 @@ export default function HomePage() {
                   className="object-cover filter brightness-90"
                 />
               </div>
-            </motion.div>
+            </div>
 
             {/* Right: Architectural Narrative */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.15 }}
-              className="lg:col-span-5 space-y-8"
-            >
-              <div className="space-y-3">
+            <div className="lg:col-span-5 space-y-6">
+              <div className="space-y-2">
                 <span className="font-serif text-5xl sm:text-6xl text-brass-500 font-light block">
                   01
                 </span>
-                <h2 className="font-serif text-4xl sm:text-5xl text-charcoal-900 font-light tracking-tight">
+                <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-charcoal-900 font-light tracking-tight">
                   {featuredProject.title}
                 </h2>
                 <p className="text-xs uppercase tracking-[0.25em] text-brass-600 font-medium">
@@ -205,7 +186,7 @@ export default function HomePage() {
               </p>
 
               {/* Materials Accent */}
-              <div className="space-y-3 border-t border-charcoal-900/10 pt-6">
+              <div className="space-y-3 border-t border-charcoal-900/10 pt-5">
                 <span className="text-[10px] uppercase tracking-[0.3em] text-charcoal-900 font-medium block">
                   Primary Material Palette:
                 </span>
@@ -228,15 +209,15 @@ export default function HomePage() {
                   <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
 
 
       {/* 3. PROJECT INDEX SECTION (TYPOGRAPHY ARCHIVE LIST WITH HOVER PREVIEW) */}
-      <section className="py-28 md:py-40 bg-[#0B0B0B] text-bone-100 px-6 sm:px-10 lg:px-16 relative">
-        <div className="max-w-7xl mx-auto space-y-16">
+      <section className="py-20 md:py-28 bg-[#0B0B0B] text-bone-100 px-6 sm:px-10 lg:px-16 relative">
+        <div className="max-w-7xl mx-auto space-y-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-6">
             <div>
               <span className="text-[10px] uppercase tracking-[0.35em] text-brass-400 font-medium block mb-1">
@@ -257,15 +238,11 @@ export default function HomePage() {
           {/* Typography Archive Table List */}
           <div className="divide-y divide-white/10">
             {archiveProjects.map((project, idx) => (
-              <motion.div
+              <div
                 key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.08 }}
                 onMouseEnter={() => setHoveredProject(project)}
                 onMouseLeave={() => setHoveredProject(null)}
-                className="group py-7 sm:py-9 grid grid-cols-1 sm:grid-cols-12 gap-4 items-center cursor-pointer hover:bg-white/[0.03] transition-colors px-4 -mx-4"
+                className="group py-6 sm:py-8 grid grid-cols-1 sm:grid-cols-12 gap-4 items-center cursor-pointer hover:bg-white/[0.03] transition-colors px-4 -mx-4"
               >
                 {/* Name */}
                 <div className="sm:col-span-5 font-serif text-2xl sm:text-3xl lg:text-4xl text-bone-100 group-hover:text-brass-300 transition-colors">
@@ -300,7 +277,7 @@ export default function HomePage() {
                 <div className="sm:col-span-1 text-xs uppercase tracking-[0.2em] text-brass-400 text-right">
                   {project.year}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -309,10 +286,10 @@ export default function HomePage() {
         <AnimatePresence>
           {hoveredProject && (
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.3 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.2 }}
               className="hidden lg:block pointer-events-none fixed right-20 top-1/2 -translate-y-1/2 z-30 w-80 h-96 border border-white/20 overflow-hidden shadow-2xl"
             >
               <Image
@@ -332,41 +309,28 @@ export default function HomePage() {
 
 
       {/* 4. PHILOSOPHY SECTION (SHORT & POWERFUL SPLIT STATEMENT) */}
-      <section className="py-32 md:py-44 bg-bone-100 px-6 sm:px-10 lg:px-16 border-b border-charcoal-900/10">
-        <div className="max-w-6xl mx-auto space-y-16">
+      <section className="py-20 md:py-28 bg-bone-100 px-6 sm:px-10 lg:px-16 border-b border-charcoal-900/10">
+        <div className="max-w-6xl mx-auto space-y-12">
           <span className="text-[10px] uppercase tracking-[0.35em] text-brass-600 font-medium block">
             Ethos & Discipline
           </span>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className="font-serif text-4xl sm:text-6xl lg:text-7xl font-light text-charcoal-900 leading-[1.08] tracking-tight text-balance"
-          >
+          <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-light text-charcoal-900 leading-[1.1] tracking-tight text-balance">
             “Luxury is not excess. It is the discipline of knowing what to leave untouched.”
-          </motion.h2>
+          </h2>
 
           {/* 3 Core Principles */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pt-10 border-t border-charcoal-900/10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-charcoal-900/10">
             {[
               { num: "01", title: "Light before form", desc: "Before drawing a wall, we calculate how morning sun washes over stone surfaces." },
               { num: "02", title: "Materials with memory", desc: "We specify honest natural materials that accept human patina and weather gracefully." },
               { num: "03", title: "Silence as a design tool", desc: "Acoustic compression and spatial restraint create profound stillness inside modern homes." },
-            ].map((p, idx) => (
-              <motion.div
-                key={p.title}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: idx * 0.1 }}
-                className="space-y-3"
-              >
+            ].map((p) => (
+              <div key={p.title} className="space-y-3">
                 <span className="font-serif text-2xl text-brass-600 font-light block">{p.num}</span>
                 <h3 className="font-serif text-2xl text-charcoal-900 font-light">{p.title}</h3>
                 <p className="text-xs text-muted-slate font-light leading-relaxed">{p.desc}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -374,8 +338,8 @@ export default function HomePage() {
 
 
       {/* 5. SERVICES AS EDITORIAL MANIFESTO (LARGE HORIZONTAL BLOCKS) */}
-      <section className="py-28 md:py-40 bg-bone-200 px-6 sm:px-10 lg:px-16 border-b border-charcoal-900/10">
-        <div className="max-w-7xl mx-auto space-y-16">
+      <section className="py-20 md:py-28 bg-bone-200 px-6 sm:px-10 lg:px-16 border-b border-charcoal-900/10">
+        <div className="max-w-7xl mx-auto space-y-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-charcoal-900/10 pb-6">
             <div>
               <span className="text-[10px] uppercase tracking-[0.35em] text-brass-600 font-medium block mb-1">
@@ -393,18 +357,14 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Horizontal Blocks List (7 Cols) */}
             <div className="lg:col-span-7 divide-y divide-charcoal-900/10 border-t border-b border-charcoal-900/10">
               {servicesList.map((service, idx) => (
-                <motion.div
+                <div
                   key={service.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: idx * 0.08 }}
                   onMouseEnter={() => setHoveredService(idx)}
-                  className={`py-8 px-4 cursor-pointer transition-all duration-300 ${
+                  className={`py-6 px-4 cursor-pointer transition-all duration-300 ${
                     hoveredService === idx ? "bg-bone-100 border-l-2 border-charcoal-900" : ""
                   }`}
                 >
@@ -412,23 +372,23 @@ export default function HomePage() {
                     <span className="font-serif text-2xl text-brass-600">{service.number}</span>
                     <h3 className="font-serif text-2xl sm:text-3xl text-charcoal-900">{service.title}</h3>
                   </div>
-                  <p className="text-xs text-muted-slate font-light pt-3 max-w-xl leading-relaxed">
+                  <p className="text-xs text-muted-slate font-light pt-2 max-w-xl leading-relaxed">
                     {service.desc}
                   </p>
-                </motion.div>
+                </div>
               ))}
             </div>
 
             {/* Right Side Image Accent (5 Cols) */}
             <div className="lg:col-span-5 relative">
-              <div className="relative h-[480px] w-full overflow-hidden bg-charcoal-900 border border-charcoal-900/10 shadow-2xl">
+              <div className="relative h-[420px] w-full overflow-hidden bg-charcoal-900 border border-charcoal-900/10 shadow-2xl">
                 <Image
                   src={
                     hoveredService !== null
                       ? servicesList[hoveredService].image
                       : servicesList[0].image
                   }
-                  alt="VYOM Service Accent"
+                  alt="AAROH Service Accent"
                   fill
                   className="object-cover transition-all duration-700 filter contrast-[1.04]"
                 />
@@ -444,8 +404,8 @@ export default function HomePage() {
 
 
       {/* 6. STUDIO PROCESS (BLUEPRINT TIMELINE) */}
-      <section className="py-32 md:py-44 bg-[#0B0B0B] text-bone-100 px-6 sm:px-10 lg:px-16 border-b border-white/10">
-        <div className="max-w-7xl mx-auto space-y-20">
+      <section className="py-20 md:py-28 bg-[#0B0B0B] text-bone-100 px-6 sm:px-10 lg:px-16 border-b border-white/10">
+        <div className="max-w-7xl mx-auto space-y-14">
           <div className="space-y-3">
             <span className="text-[10px] uppercase tracking-[0.35em] text-brass-400 font-medium block">
               Architectural Methodology
@@ -456,13 +416,9 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
-            {processBlueprint.map((step, idx) => (
-              <motion.div
+            {processBlueprint.map((step) => (
+              <div
                 key={step.num}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: idx * 0.1 }}
                 className="space-y-4 border-l md:border-l-0 md:border-t border-white/15 pt-6 md:pt-8 pl-6 md:pl-0 relative"
               >
                 <span className="font-serif text-3xl text-brass-400 font-light block">
@@ -472,7 +428,7 @@ export default function HomePage() {
                 <p className="text-xs text-ash-400 font-light leading-relaxed">
                   {step.desc}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -480,13 +436,13 @@ export default function HomePage() {
 
 
       {/* 7. FINAL COMMISSION SECTION */}
-      <section className="py-32 md:py-44 bg-bone-100 text-charcoal-900 text-center px-6 sm:px-10 lg:px-16 border-t border-charcoal-900/10">
-        <div className="max-w-4xl mx-auto space-y-8">
+      <section className="py-20 md:py-28 bg-bone-100 text-charcoal-900 text-center px-6 sm:px-10 lg:px-16 border-t border-charcoal-900/10">
+        <div className="max-w-4xl mx-auto space-y-6">
           <span className="text-[10px] uppercase tracking-[0.35em] text-brass-600 font-medium block">
             Initiate Conversation
           </span>
 
-          <h2 className="font-serif text-4xl sm:text-6xl md:text-7xl font-light tracking-tight text-balance leading-tight text-charcoal-900">
+          <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light tracking-tight text-balance leading-tight text-charcoal-900">
             “Tell us about the space you are imagining.”
           </h2>
 

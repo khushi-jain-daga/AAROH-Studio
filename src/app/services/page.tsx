@@ -32,7 +32,7 @@ export default function ServicesPage() {
   };
 
   return (
-    <div className="pt-32 pb-28 bg-bone-100 min-h-screen space-y-24 md:space-y-36 text-charcoal-900 selection:bg-charcoal-900 selection:text-bone-100">
+    <div className="pt-28 pb-20 bg-bone-100 min-h-screen space-y-16 md:space-y-24 text-charcoal-900 selection:bg-charcoal-900 selection:text-bone-100">
       {/* Hero Header */}
       <section className="px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto space-y-6">
         <div className="space-y-4 border-b border-charcoal-900/10 pb-8">
@@ -49,7 +49,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services List with Subtle Contextual CTAs */}
-      <section className="px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto space-y-24">
+      <section className="px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto space-y-16 sm:space-y-24">
         {SERVICES.map((service, idx) => {
           const isEven = idx % 2 === 0;
           const ctaConfig = customCtas[service.id] || {
@@ -59,20 +59,14 @@ export default function ServicesPage() {
 
           return (
             <React.Fragment key={service.id}>
-              <div id={service.id} className="scroll-mt-32 space-y-16">
+              <div id={service.id} className="scroll-mt-32 space-y-12">
                 <div
-                  className={`grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center ${
+                  className={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center ${
                     isEven ? "" : "lg:flex-row-reverse"
                   }`}
                 >
                   {/* Text Column */}
-                  <motion.div
-                    initial={{ opacity: 0, x: isEven ? -30 : 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className={`lg:col-span-7 space-y-8 ${isEven ? "" : "lg:order-2"}`}
-                  >
+                  <div className={`lg:col-span-7 space-y-6 ${isEven ? "" : "lg:order-2"}`}>
                     <div className="space-y-2">
                       <span className="font-serif text-3xl text-brass-600 font-light block">
                         {service.number}
@@ -128,17 +122,11 @@ export default function ServicesPage() {
                         </Link>
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
 
                   {/* Image Column */}
-                  <motion.div
-                    initial={{ opacity: 0, x: isEven ? 30 : -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className={`lg:col-span-5 ${isEven ? "" : "lg:order-1"}`}
-                  >
-                    <div className="relative h-[480px] w-full overflow-hidden bg-charcoal-900 border border-charcoal-900/10 shadow-xl">
+                  <div className={`lg:col-span-5 ${isEven ? "" : "lg:order-1"}`}>
+                    <div className="relative h-[380px] sm:h-[460px] w-full overflow-hidden bg-charcoal-900 border border-charcoal-900/10 shadow-xl">
                       <Image
                         src={service.image}
                         alt={service.title}
@@ -146,7 +134,7 @@ export default function ServicesPage() {
                         className="object-cover filter contrast-[1.02]"
                       />
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
               </div>
             </React.Fragment>

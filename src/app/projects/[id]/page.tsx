@@ -137,7 +137,7 @@ export default function ProjectDetailPage() {
       </section>
 
       {/* 4. CINEMATIC GALLERY SEQUENCE (STAGGERED COMPOSITION) */}
-      <section className="py-28 md:py-36 px-6 sm:px-10 lg:px-16 border-b border-charcoal-900/10 space-y-16">
+      <section className="py-20 md:py-28 px-6 sm:px-10 lg:px-16 border-b border-charcoal-900/10 space-y-12">
         <div className="max-w-7xl mx-auto flex items-center justify-between border-b border-charcoal-900/10 pb-4 text-[10px] uppercase tracking-[0.3em] text-brass-600">
           <span>CINEMATIC GALLERY SEQUENCE</span>
           <span>CLICK FOR LIGHTBOX MONOGRAPH</span>
@@ -211,8 +211,8 @@ export default function ProjectDetailPage() {
       </section>
 
       {/* 5. MATERIAL MEMORY SECTION (EDITORIAL SAMPLE BOARD, NO ECOMMERCE CARDS) */}
-      <section className="py-28 md:py-36 bg-[#0B0B0B] text-bone-100 px-6 sm:px-10 lg:px-16 border-b border-white/10">
-        <div className="max-w-7xl mx-auto space-y-16">
+      <section className="py-20 md:py-28 bg-[#0B0B0B] text-bone-100 px-6 sm:px-10 lg:px-16 border-b border-white/10">
+        <div className="max-w-7xl mx-auto space-y-12">
           <div className="space-y-3">
             <span className="text-[10px] uppercase tracking-[0.35em] text-brass-400 font-medium block">
               Tactile Integrity
@@ -237,8 +237,8 @@ export default function ProjectDetailPage() {
       </section>
 
       {/* 6. DESIGN RESPONSE (SPLIT LAYOUT: LEFT NUMBER, RIGHT EXPLANATION) */}
-      <section className="py-28 md:py-36 px-6 sm:px-10 lg:px-16 border-b border-charcoal-900/10">
-        <div className="max-w-6xl mx-auto space-y-16">
+      <section className="py-20 md:py-28 px-6 sm:px-10 lg:px-16 border-b border-charcoal-900/10">
+        <div className="max-w-6xl mx-auto space-y-12">
           <span className="text-[10px] uppercase tracking-[0.35em] text-brass-600 font-medium block">
             Architectural Interventions
           </span>
@@ -258,13 +258,13 @@ export default function ProjectDetailPage() {
       </section>
 
       {/* 7. CLOSING QUOTE */}
-      <section className="py-24 bg-[#0B0B0B] text-bone-100 px-6 sm:px-10 lg:px-16 text-center border-b border-white/10">
+      <section className="py-20 bg-[#0B0B0B] text-bone-100 px-6 sm:px-10 lg:px-16 text-center border-b border-white/10">
         <div className="max-w-4xl mx-auto space-y-6">
           <blockquote className="font-serif text-3xl sm:text-5xl text-bone-100 font-light leading-relaxed">
             {project.pullQuote}
           </blockquote>
           <p className="text-[10px] uppercase tracking-[0.3em] text-brass-400 pt-2">
-            VYOM Atelier — Principal Statement
+            AAROH Studio — Principal Statement
           </p>
         </div>
       </section>

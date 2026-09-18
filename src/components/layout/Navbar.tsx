@@ -53,10 +53,10 @@ export default function Navbar() {
           {/* Brand Logo Mark */}
           <Link href="/" className="group flex flex-col items-start focus:outline-none">
             <span className="font-serif tracking-[0.3em] text-xl font-light uppercase text-bone-100 transition-colors duration-500 group-hover:text-brass-300">
-              VYOM
+              AAROH
             </span>
             <span className="text-[9px] tracking-[0.45em] text-ash-400 uppercase font-sans font-medium -mt-0.5 group-hover:text-bone-200 transition-colors">
-              ATELIER
+              STUDIO
             </span>
           </Link>
 
@@ -77,7 +77,7 @@ export default function Navbar() {
                   {link.name}
                   {isActive && (
                     <motion.div
-                      layoutId="vyom-nav-line"
+                      layoutId="aaroh-nav-line"
                       className="absolute bottom-0 left-0 right-0 h-[1px] bg-brass-300"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
@@ -120,12 +120,12 @@ export default function Navbar() {
             className="fixed inset-0 z-40 bg-[#0B0B0B] text-bone-100 flex flex-col justify-between p-8 pt-28 md:hidden overflow-y-auto"
           >
             <div className="absolute right-[-10%] bottom-[15%] text-[140px] font-serif text-white/[0.025] pointer-events-none select-none">
-              VYOM
+              AAROH
             </div>
 
             <div className="flex flex-col space-y-7 relative z-10">
               <span className="text-[10px] uppercase tracking-[0.35em] text-brass-400 border-b border-white/10 pb-3 block">
-                Atelier Directory
+                Studio Directory
               </span>
               {NAV_LINKS.map((link, idx) => (
                 <motion.div
@@ -150,10 +150,10 @@ export default function Navbar() {
 
             <div className="pt-8 border-t border-white/10 space-y-6 relative z-10">
               <div className="text-xs text-ash-400 font-light space-y-1">
-                <p className="uppercase tracking-wider text-bone-100 font-medium">Jaipur Atelier</p>
+                <p className="uppercase tracking-wider text-bone-100 font-medium">Jaipur Studio</p>
                 <p>32 Prithviraj Road, C-Scheme, Jaipur 302001, India</p>
-                <a href="mailto:inquiry@vyomatelier.com" className="text-brass-300 hover:underline block pt-1">
-                  inquiry@vyomatelier.com
+                <a href="mailto:inquiry@aarohstudio.com" className="text-brass-300 hover:underline block pt-1">
+                  inquiry@aarohstudio.com
                 </a>
               </div>
 

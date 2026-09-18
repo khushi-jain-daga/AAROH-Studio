@@ -28,10 +28,10 @@ export interface Testimonial {
 export const STUDIO_DATA = {
   intro: {
     title: "Architecture for spaces that remember.",
-    subtitle: "VYOM Atelier is a quiet architecture and interior atelier headquartered in Jaipur, India. We shape refined residential, hospitality, and cultural spaces through light, proportion, silence and material restraint.",
+    subtitle: "AAROH Studio is a quiet architecture and interior studio headquartered in Jaipur, India. We shape refined residential, hospitality, and cultural spaces through light, proportion, silence and material restraint.",
     manifesto: [
       "We believe architecture should feel grounded before it is modern. It should listen to the whispers of its landscape, respect local climate dynamics, and honor the tactile wisdom of master craftspeople.",
-      "In a world consumed by hyper-fast construction and disposable design trends, VYOM Atelier stands for spatial restraint, material authenticity, and enduring elegance."
+      "In a world consumed by hyper-fast construction and disposable design trends, AAROH Studio stands for spatial restraint, material authenticity, and enduring elegance."
     ]
   },
   foundersNote: {
@@ -93,7 +93,7 @@ export const STUDIO_DATA = {
   press: [
     {
       publication: "Architectural Digest",
-      headline: "VYOM Atelier: The Jaipur Practice Redefining Modern Desert Luxury",
+      headline: "AAROH Studio: The Jaipur Practice Redefining Modern Desert Luxury",
       year: "2024"
     },
     {
@@ -108,13 +108,13 @@ export const STUDIO_DATA = {
     },
     {
       publication: "Design Anthology",
-      headline: "Quiet Sanctuaries: Exploring the Tactile Interiors of VYOM Atelier",
+      headline: "Quiet Sanctuaries: Exploring the Tactile Interiors of AAROH Studio",
       year: "2023"
     }
   ],
   testimonials: [
     {
-      quote: "VYOM Atelier transformed our family plot into a timeless sanctuary. The passive cooling of the central courtyard means we rarely turn on air conditioning even in peak Jaipur summers.",
+      quote: "AAROH Studio transformed our family plot into a timeless sanctuary. The passive cooling of the central courtyard means we rarely turn on air conditioning even in peak Jaipur summers.",
       client: "Vikramaditya & Gayatri Singh",
       role: "Estate Owners",
       project: "The Courtyard House",
@@ -128,7 +128,7 @@ export const STUDIO_DATA = {
       location: "Rishikesh"
     },
     {
-      quote: "Restoring an 18th-century merchant haveli without damaging historic frescoes required immense architectural discipline. VYOM Atelier executed it with reverence and precision.",
+      quote: "Restoring an 18th-century merchant haveli without damaging historic frescoes required immense architectural discipline. AAROH Studio executed it with reverence and precision.",
       client: "Gajendra Singh Jodha",
       role: "Heritage Hotel Proprietor",
       project: "Tales of Terracotta",

@@ -118,16 +118,12 @@ export default function ProjectsPage() {
           </div>
 
           <div className="divide-y divide-charcoal-900/10 border-b border-charcoal-900/10">
-            {filteredProjects.map((project, idx) => (
-              <motion.div
+            {filteredProjects.map((project) => (
+              <div
                 key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.06 }}
                 onMouseEnter={() => setHoveredProject(project)}
                 onMouseLeave={() => setHoveredProject(null)}
-                className="group py-7 sm:py-9 grid grid-cols-1 sm:grid-cols-12 gap-4 items-center cursor-pointer hover:bg-bone-200/80 transition-colors px-4 -mx-4"
+                className="group py-6 sm:py-8 grid grid-cols-1 sm:grid-cols-12 gap-4 items-center cursor-pointer hover:bg-bone-200/80 transition-colors px-4 -mx-4"
               >
                 {/* Title */}
                 <div className="sm:col-span-5 font-serif text-2xl sm:text-3xl lg:text-4xl text-charcoal-900 group-hover:text-brass-600 transition-colors">
@@ -162,7 +158,7 @@ export default function ProjectsPage() {
                 <div className="sm:col-span-1 text-xs uppercase tracking-[0.2em] text-brass-600 text-right font-medium">
                   {project.year}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </section>

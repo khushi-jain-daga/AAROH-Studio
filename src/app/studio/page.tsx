@@ -9,9 +9,9 @@ import { STUDIO_DATA } from "@/data/studio";
 
 export default function StudioPage() {
   return (
-    <div className="pt-32 pb-28 bg-bone-100 min-h-screen space-y-24 md:space-y-36 text-charcoal-900 selection:bg-charcoal-900 selection:text-bone-100">
+    <div className="pt-28 pb-20 bg-bone-100 min-h-screen space-y-16 md:space-y-24 text-charcoal-900 selection:bg-charcoal-900 selection:text-bone-100">
       {/* 1. HERO HEADER */}
-      <section className="px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto space-y-10">
+      <section className="px-6 sm:px-10 lg:px-16 max-w-7xl mx-auto space-y-8">
         <div className="space-y-4 border-b border-charcoal-900/10 pb-8">
           <span className="text-[10px] uppercase tracking-[0.35em] text-brass-600 font-medium block">
             About the Practice
@@ -24,33 +24,27 @@ export default function StudioPage() {
           </p>
         </div>
 
-        <div className="relative h-[480px] sm:h-[620px] w-full overflow-hidden bg-charcoal-900 border border-charcoal-900/10 shadow-2xl">
+        <div className="relative h-[380px] sm:h-[540px] w-full overflow-hidden bg-charcoal-900 border border-charcoal-900/10 shadow-2xl">
           <Image
             src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=90&w=2000"
-            alt="VYOM Atelier Design Lab"
+            alt="AAROH Studio Design Lab"
             fill
             className="object-cover filter contrast-[1.04]"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B]/80 via-transparent to-transparent" />
           <div className="absolute bottom-6 left-6 right-6 text-xs uppercase tracking-[0.25em] text-bone-100 flex items-center justify-between border-t border-white/20 pt-4">
-            <span>Jaipur Atelier & Material Laboratory</span>
+            <span>Jaipur Studio & Material Laboratory</span>
             <span className="text-brass-300 font-medium">Est. 2012</span>
           </div>
         </div>
       </section>
 
       {/* 2. MANIFESTO & FOUNDERS VISION */}
-      <section className="py-28 bg-[#0B0B0B] text-bone-100 px-6 sm:px-10 lg:px-16 border-t border-b border-white/10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="lg:col-span-5 relative"
-          >
-            <div className="relative h-[520px] w-full overflow-hidden border border-white/10 shadow-2xl">
+      <section className="py-20 bg-[#0B0B0B] text-bone-100 px-6 sm:px-10 lg:px-16 border-t border-b border-white/10">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          <div className="lg:col-span-5 relative">
+            <div className="relative h-[440px] sm:h-[500px] w-full overflow-hidden border border-white/10 shadow-2xl">
               <Image
                 src={STUDIO_DATA.foundersNote.image}
                 alt={STUDIO_DATA.foundersNote.author}
@@ -58,15 +52,9 @@ export default function StudioPage() {
                 className="object-cover filter contrast-105"
               />
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.15 }}
-            className="lg:col-span-7 space-y-8"
-          >
+          <div className="lg:col-span-7 space-y-6">
             <span className="text-[10px] uppercase tracking-[0.35em] text-brass-400 font-medium block">
               Founders' Vision
             </span>
@@ -87,7 +75,7 @@ export default function StudioPage() {
                 {STUDIO_DATA.foundersNote.title}
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

@@ -26,7 +26,7 @@ export default function Footer() {
           <div className="lg:col-span-5 space-y-8">
             <Link href="/" className="inline-block group">
               <span className="font-serif tracking-[0.3em] text-3xl uppercase text-bone-100 block group-hover:text-brass-300 transition-colors">
-                VYOM ATELIER
+                AAROH STUDIO
               </span>
               <span className="text-[9px] tracking-[0.45em] text-ash-400 uppercase font-sans mt-1.5 block">
                 Architecture • Interior Architecture • Monograph
@@ -34,7 +34,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-xs sm:text-sm font-light text-ash-300 max-w-md leading-relaxed">
-              A quiet architectural atelier shaping private residences, retreats and cultural interiors through light, proportion, silence and material restraint.
+              A quiet architectural studio shaping private residences, retreats and cultural interiors through light, proportion, silence and material restraint.
             </p>
 
             {/* Monograph Salon Subscription */}
@@ -75,18 +75,18 @@ export default function Footer() {
             </h4>
             <div className="space-y-4 text-xs font-light text-ash-300">
               <div>
-                <p className="font-medium text-bone-100 uppercase tracking-wider mb-1">Jaipur Atelier</p>
+                <p className="font-medium text-bone-100 uppercase tracking-wider mb-1">Jaipur Studio</p>
                 <p>32 Prithviraj Road, C-Scheme</p>
                 <p>Jaipur, Rajasthan 302001, India</p>
               </div>
 
               <div className="border-t border-white/5 pt-3">
                 <p className="font-medium text-bone-100 uppercase tracking-wider mb-1">Direct Inquiries</p>
-                <a href="mailto:inquiry@vyomatelier.com" className="text-brass-300 hover:underline block">
-                  inquiry@vyomatelier.com
+                <a href="mailto:inquiry@aarohstudio.com" className="text-brass-300 hover:underline block">
+                  inquiry@aarohstudio.com
                 </a>
-                <a href="mailto:press@vyomatelier.com" className="text-ash-400 hover:underline block mt-0.5">
-                  press@vyomatelier.com
+                <a href="mailto:press@aarohstudio.com" className="text-ash-400 hover:underline block mt-0.5">
+                  press@aarohstudio.com
                 </a>
               </div>
             </div>
@@ -101,10 +101,10 @@ export default function Footer() {
               {[
                 { name: "Work", href: "/" },
                 { name: "Archive", href: "/projects" },
-                { name: "Atelier", href: "/studio" },
-                { name: "Manifesto", href: "/services" },
+                { name: "Studio", href: "/studio" },
+                { name: "Services", href: "/services" },
                 { name: "Journal", href: "/journal" },
-                { name: "Commission", href: "/contact" },
+                { name: "Contact", href: "/contact" },
               ].map((item) => (
                 <li key={item.name}>
                   <Link href={item.href} className="hover:text-brass-300 transition-colors flex items-center group">
@@ -145,7 +145,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-ash-400 font-light">
-          <p>© {new Date().getFullYear()} VYOM Atelier. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} AAROH Studio. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 sm:mt-0">
             <span className="hover:text-bone-100 cursor-pointer">Privacy & Terms</span>
             <span className="hover:text-bone-100 cursor-pointer">Architectural Accreditation</span>
@@ -155,7 +155,7 @@ export default function Footer() {
         {/* Giant Signature Watermark */}
         <div className="mt-16 pt-6 border-t border-white/5 text-center pointer-events-none select-none">
           <span className="font-serif text-[12vw] leading-none text-white/[0.02] uppercase tracking-[0.15em] block">
-            VYOM ATELIER
+            AAROH STUDIO
           </span>
         </div>
       </div>

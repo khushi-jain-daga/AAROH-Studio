@@ -4,30 +4,30 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "VYOM Atelier | Architecture for spaces that remember.",
+  title: "AAROH Studio | Architecture & Interior Design",
   description:
-    "VYOM Atelier is a quiet architecture and interior atelier shaping residences, retreats and cultural interiors through light, proportion and material restraint.",
+    "AAROH Studio is a premier architecture and interior studio shaping residences, retreats and cultural spaces through climate, proportion, material and memory.",
   keywords: [
-    "VYOM Atelier",
-    "Luxury Architecture Atelier Jaipur",
-    "Minimal Interior Architecture India",
-    "High End Residential Design",
+    "AAROH Studio",
+    "Architecture Studio Jaipur",
+    "Interior Architecture India",
+    "High End Residential Estates",
     "Hospitality Architecture Retreats",
-    "Architectural Haveli Restoration",
+    "Heritage Haveli Renovation",
   ],
-  authors: [{ name: "VYOM Atelier" }],
+  authors: [{ name: "AAROH Studio" }],
   openGraph: {
-    title: "VYOM Atelier | Architecture for spaces that remember.",
+    title: "AAROH Studio | Architecture & Interior Design",
     description:
-      "VYOM Atelier shapes residences, retreats and cultural interiors through light, proportion and material restraint.",
-    url: "https://vyomatelier.com",
-    siteName: "VYOM Atelier",
+      "AAROH Studio shapes residences, retreats and cultural interiors through climate, proportion, material and memory.",
+    url: "https://aarohstudio.com",
+    siteName: "AAROH Studio",
     images: [
       {
         url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=85&w=1200",
         width: 1200,
         height: 630,
-        alt: "VYOM Atelier Architectural Monograph",
+        alt: "AAROH Studio Architecture Portfolio",
       },
     ],
     locale: "en_US",
