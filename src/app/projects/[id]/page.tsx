@@ -143,18 +143,18 @@ export default function ProjectDetailPage() {
           <span>CLICK FOR LIGHTBOX MONOGRAPH</span>
         </div>
 
-        <div className="max-w-7xl mx-auto space-y-16 sm:space-y-24">
+        <div className="max-w-7xl mx-auto space-y-12 sm:space-y-24">
           {project.gallery.map((img, idx) => {
             if (img.layoutRole === "full-width") {
               return (
                 <div
                   key={idx}
                   onClick={() => setModalIndex(idx)}
-                  className="relative h-[500px] sm:h-[650px] w-full overflow-hidden bg-charcoal-900 border border-charcoal-900/10 shadow-2xl cursor-pointer group"
+                  className="relative h-[320px] sm:h-[650px] w-full overflow-hidden bg-charcoal-900 border border-charcoal-900/10 shadow-2xl cursor-pointer group"
                 >
                   <Image src={img.url} alt={img.caption} fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-8 flex items-end">
-                    <p className="text-xs uppercase tracking-[0.2em] text-bone-100">{img.caption}</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity p-6 sm:p-8 flex items-end">
+                    <p className="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-bone-100">{img.caption}</p>
                   </div>
                 </div>
               );
@@ -166,11 +166,11 @@ export default function ProjectDetailPage() {
                 <div key={idx} className={`flex ${isLeft ? "justify-start" : "justify-end"}`}>
                   <div
                     onClick={() => setModalIndex(idx)}
-                    className="relative h-[420px] sm:h-[540px] w-full max-w-3xl overflow-hidden bg-charcoal-900 border border-charcoal-900/10 shadow-xl cursor-pointer group"
+                    className="relative h-[280px] sm:h-[540px] w-full max-w-3xl overflow-hidden bg-charcoal-900 border border-charcoal-900/10 shadow-xl cursor-pointer group"
                   >
                     <Image src={img.url} alt={img.caption} fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex items-end">
-                      <p className="text-xs uppercase tracking-[0.2em] text-bone-100">{img.caption}</p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity p-5 sm:p-6 flex items-end">
+                      <p className="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-bone-100">{img.caption}</p>
                     </div>
                   </div>
                 </div>
@@ -182,11 +182,11 @@ export default function ProjectDetailPage() {
                 <div key={idx} className="flex justify-center">
                   <div
                     onClick={() => setModalIndex(idx)}
-                    className="relative h-[540px] sm:h-[680px] w-full max-w-xl overflow-hidden bg-charcoal-900 border border-charcoal-900/10 shadow-2xl cursor-pointer group"
+                    className="relative h-[380px] sm:h-[680px] w-full max-w-xl overflow-hidden bg-charcoal-900 border border-charcoal-900/10 shadow-2xl cursor-pointer group"
                   >
                     <Image src={img.url} alt={img.caption} fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex items-end">
-                      <p className="text-xs uppercase tracking-[0.2em] text-bone-100">{img.caption}</p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity p-5 sm:p-6 flex items-end">
+                      <p className="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-bone-100">{img.caption}</p>
                     </div>
                   </div>
                 </div>
@@ -197,11 +197,11 @@ export default function ProjectDetailPage() {
               <div key={idx} className="max-w-4xl mx-auto">
                 <div
                   onClick={() => setModalIndex(idx)}
-                  className="relative h-[380px] sm:h-[480px] w-full overflow-hidden bg-charcoal-900 border border-charcoal-900/10 shadow-xl cursor-pointer group"
+                  className="relative h-[260px] sm:h-[480px] w-full overflow-hidden bg-charcoal-900 border border-charcoal-900/10 shadow-xl cursor-pointer group"
                 >
                   <Image src={img.url} alt={img.caption} fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex items-end">
-                    <p className="text-xs uppercase tracking-[0.2em] text-bone-100">{img.caption}</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity p-5 sm:p-6 flex items-end">
+                    <p className="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-bone-100">{img.caption}</p>
                   </div>
                 </div>
               </div>

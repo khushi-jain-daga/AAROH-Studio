@@ -75,7 +75,7 @@ export default function ProjectsPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Image */}
-            <div className="lg:col-span-7 relative h-[440px] sm:h-[520px] w-full overflow-hidden bg-charcoal-900 border border-charcoal-900/10 shadow-xl">
+            <div className="lg:col-span-7 relative h-[300px] sm:h-[520px] w-full overflow-hidden bg-charcoal-900 border border-charcoal-900/10 shadow-xl">
               <Image
                 src={featuredProject.heroImage}
                 alt={featuredProject.title}
@@ -132,6 +132,20 @@ export default function ProjectsPage() {
                 {/* Title */}
                 <div className="sm:col-span-5 font-serif text-2xl sm:text-3xl lg:text-4xl text-charcoal-900 group-hover:text-brass-600 transition-colors">
                   <Link href={`/projects/${project.id}`}>{project.title}</Link>
+                </div>
+
+                {/* Mobile Inline Image Preview */}
+                <div className="block lg:hidden sm:col-span-12 my-2">
+                  <Link href={`/projects/${project.id}`}>
+                    <div className="relative aspect-[16/9] w-full overflow-hidden border border-charcoal-900/10 shadow-sm bg-charcoal-900">
+                      <Image
+                        src={project.heroImage}
+                        alt={project.title}
+                        fill
+                        className="object-cover filter contrast-[1.04]"
+                      />
+                    </div>
+                  </Link>
                 </div>
 
                 {/* Typology */}

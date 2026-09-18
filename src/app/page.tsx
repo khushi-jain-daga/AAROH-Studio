@@ -52,18 +52,18 @@ export default function HomePage() {
   return (
     <div className="space-y-0 overflow-hidden bg-bone-100 text-charcoal-900 selection:bg-charcoal-900 selection:text-bone-100">
       
-      {/* 1. FILM-LIKE OPENING HERO */}
-      <section className="relative h-screen w-full flex flex-col justify-between p-6 sm:p-10 lg:p-16 overflow-hidden bg-[#0B0B0B] text-bone-100 pt-28">
-        {/* Background Film Crop Image */}
-        <div className="absolute inset-0 z-0 opacity-40">
+      {/* 1. HERO SECTION (FULL VIEWPORT ARCHITECTURAL FILM OPENING) */}
+      <section className="relative min-h-[88vh] sm:min-h-screen w-full flex flex-col justify-between pt-28 pb-10 sm:pt-36 sm:pb-14 px-6 sm:px-10 lg:px-16 overflow-hidden">
+        {/* Background Architectural Video / High-Res Atmosphere */}
+        <div className="absolute inset-0 z-0 bg-[#0B0B0B]">
           <Image
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=95&w=2600"
-            alt="VYOM Atelier Architecture Crop"
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=90&w=2400"
+            alt="VYOM Atelier Architecture"
             fill
-            className="object-cover animate-slow-pan filter grayscale-[20%] contrast-[1.1]"
+            className="object-cover opacity-50 filter contrast-[1.08] brightness-[0.7]"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-[#0B0B0B]/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-[#0B0B0B]/40 to-black/60" />
         </div>
 
         {/* Editorial Side Watermark Label */}
@@ -270,6 +270,20 @@ export default function HomePage() {
                 {/* Name */}
                 <div className="sm:col-span-5 font-serif text-2xl sm:text-3xl lg:text-4xl text-bone-100 group-hover:text-brass-300 transition-colors">
                   <Link href={`/projects/${project.id}`}>{project.title}</Link>
+                </div>
+
+                {/* Mobile Inline Image Preview */}
+                <div className="block lg:hidden sm:col-span-12 my-2">
+                  <Link href={`/projects/${project.id}`}>
+                    <div className="relative aspect-[16/9] w-full overflow-hidden border border-white/10 shadow-md bg-charcoal-900">
+                      <Image
+                        src={project.heroImage}
+                        alt={project.title}
+                        fill
+                        className="object-cover filter contrast-[1.04]"
+                      />
+                    </div>
+                  </Link>
                 </div>
 
                 {/* Typology */}
