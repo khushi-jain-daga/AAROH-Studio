@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Begin a Consultation Dialogue | AAROH Studio",
+  title: "Begin a Commission Dialogue | VYOM Atelier",
   description:
-    "Schedule a confidential 45-minute spatial consultation with AAROH Studio principals for residential estates, hospitality sanctuaries, and cultural commissions.",
+    "Schedule a confidential 45-minute spatial consultation with VYOM Atelier principals for residential estates, hospitality sanctuaries, and cultural commissions.",
   openGraph: {
-    title: "Begin a Consultation Dialogue | AAROH Studio",
-    description: "Inquire about studio capacity and spatial consultation parameters.",
+    title: "Begin a Commission Dialogue | VYOM Atelier",
+    description: "Inquire about studio capacity and spatial commission parameters.",
   },
 };
 

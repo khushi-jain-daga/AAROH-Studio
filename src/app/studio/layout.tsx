@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Studio & Ethos | AAROH Studio",
+  title: "Atelier & Design Ethos | VYOM Atelier",
   description:
-    "Learn about AAROH Studio's design manifesto, founding principals Aarav Sharma and Rhea Singhania, core practice pillars, and press monographs.",
+    "Learn about VYOM Atelier's design manifesto, founding principals Aarav Sharma and Rhea Singhania, core practice pillars, and press monographs.",
   openGraph: {
-    title: "About Studio & Ethos | AAROH Studio",
+    title: "Atelier & Design Ethos | VYOM Atelier",
     description: "Quiet, material-rich architecture born from light, memory, and geographic context.",
   },
 };
