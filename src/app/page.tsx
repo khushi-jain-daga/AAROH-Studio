@@ -68,45 +68,41 @@ export default function HomePage() {
 
         {/* Editorial Side Watermark Label */}
         <div className="hidden lg:block absolute left-8 top-1/2 -translate-y-1/2 z-10 font-sans text-[10px] uppercase tracking-[0.4em] text-ash-400 writing-mode-vertical pointer-events-none opacity-60">
-          AAROH STUDIO • SPATIAL MONOGRAPH
+          AAROH STUDIO • JAIPUR
         </div>
 
         {/* Top Editorial Details Bar */}
         <div className="relative z-10 flex items-center justify-between text-[10px] sm:text-xs uppercase tracking-[0.3em] text-ash-400 border-b border-white/10 pb-4">
           <div className="flex items-center space-x-4">
-            <span className="text-brass-300 font-medium">PRJ-01 / JPR</span>
+            <span className="text-brass-300 font-medium">AAROH STUDIO</span>
             <span className="hidden sm:inline">•</span>
-            <span className="hidden sm:inline">JAIPUR, INDIA</span>
+            <span className="hidden sm:inline">JAIPUR • UDAIPUR • GLOBAL</span>
           </div>
           <span>EST. 2012</span>
         </div>
 
         {/* Asymmetric Hero Headline & Text Links */}
-        <div className="relative z-10 max-w-5xl space-y-8 my-auto pt-6">
-          <motion.h1
-            initial={{ opacity: 1, y: 0 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="font-serif text-4xl sm:text-7xl md:text-8xl lg:text-[90px] font-light tracking-tight leading-[1.02] text-bone-100"
-          >
-            Architecture for spaces that remember.
-          </motion.h1>
+        <div className="relative z-10 max-w-5xl space-y-6 my-auto pt-6">
+          <div className="text-[10px] uppercase tracking-[0.35em] text-brass-300 font-medium">
+            Architecture & Interior Design Practice
+          </div>
 
-          <motion.p
-            initial={{ opacity: 1, y: 0 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-xs sm:text-sm md:text-base text-ash-300 font-light max-w-xl leading-relaxed tracking-wide"
-          >
-            AAROH Studio shapes residences, retreats and cultural interiors through light, proportion and material restraint.
-          </motion.p>
+          <h1 className="font-serif text-4xl sm:text-7xl md:text-8xl lg:text-[88px] font-light tracking-tight leading-[1.02] text-bone-100">
+            Architecture for spaces that remember.
+          </h1>
+
+          <p className="text-xs sm:text-sm md:text-base text-ash-300 font-light max-w-2xl leading-relaxed tracking-wide">
+            AAROH Studio shapes private residential estates, luxury hospitality sanctuaries and cultural interiors through climate-responsive planning, raw material integrity and timeless restraint.
+          </p>
 
           {/* Minimal Text Links */}
-          <div className="flex items-center space-x-10 pt-2">
+          <div className="flex flex-wrap items-center gap-8 pt-3">
             <Link
               href="#signature-project"
               className="group flex items-center space-x-2 text-xs uppercase tracking-[0.25em] text-bone-100 hover:text-brass-300 transition-colors"
             >
-              <span>View Work</span>
-              <span className="text-brass-300 group-hover:translate-x-1 transition-transform">↓</span>
+              <span>Explore Featured Work</span>
+              <span className="text-brass-300 group-hover:translate-y-0.5 transition-transform">↓</span>
             </Link>
 
             <Link
