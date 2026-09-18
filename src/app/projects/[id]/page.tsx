@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, ArrowLeft } from "lucide-react";
 import { PROJECTS, Project } from "@/data/projects";
 import ImageModal from "@/components/ui/ImageModal";
+import SmoothScrollProvider from "@/components/motion/SmoothScrollProvider";
 
 export default function ProjectDetailPage() {
   const params = useParams();
@@ -44,7 +45,9 @@ export default function ProjectDetailPage() {
   };
 
   return (
-    <div className={`${toneClasses[project.themeTone]} min-h-screen text-charcoal-900 pb-28 selection:bg-charcoal-900 selection:text-bone-100`}>
+    <SmoothScrollProvider>
+      <div className={`${toneClasses[project.themeTone]} min-h-screen text-charcoal-900 pb-28 selection:bg-charcoal-900 selection:text-bone-100`}>
+
       
       {/* 1. OPENING: FULL-SCREEN IMAGE COMPOSITION */}
       <section className="relative h-screen w-full flex items-end overflow-hidden">
@@ -341,5 +344,7 @@ export default function ProjectDetailPage() {
         />
       )}
     </div>
+    </SmoothScrollProvider>
   );
 }
+

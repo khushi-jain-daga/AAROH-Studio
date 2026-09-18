@@ -7,6 +7,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { PROJECTS, Project } from "@/data/projects";
 
+import SmoothScrollProvider from "@/components/motion/SmoothScrollProvider";
+
 type CategoryFilter = "All" | "Residences" | "Hospitality" | "Cultural" | "Interior Architecture";
 const FILTERS: CategoryFilter[] = ["All", "Residences", "Hospitality", "Cultural", "Interior Architecture"];
 
@@ -30,7 +32,8 @@ export default function ProjectsPage() {
       : PROJECTS.filter((p) => p.category === categoryMap[activeFilter]);
 
   return (
-    <div className="pt-32 pb-32 bg-bone-100 min-h-screen px-6 sm:px-10 lg:px-16 text-charcoal-900 selection:bg-charcoal-900 selection:text-bone-100">
+    <SmoothScrollProvider>
+      <div className="pt-28 pb-20 bg-bone-100 min-h-screen px-6 sm:px-10 lg:px-16 text-charcoal-900 selection:bg-charcoal-900 selection:text-bone-100">
       <div className="max-w-7xl mx-auto space-y-20">
         
         {/* 1. ARCHIVE-STYLE OPENING */}
@@ -188,5 +191,7 @@ export default function ProjectsPage() {
         </AnimatePresence>
       </div>
     </div>
+    </SmoothScrollProvider>
   );
 }
+
